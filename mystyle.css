@@ -72,6 +72,11 @@ h2{
   text-align: center;
 }
 
+footer{
+  background-color: #DCDCDC	;
+  padding: 30px
+}
+
 
 .lesite {
   display: block;
@@ -93,4 +98,5 @@ h2{
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 10px;
 }
