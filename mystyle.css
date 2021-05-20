@@ -3,6 +3,12 @@
   src: url(Comfortaa-Regular.ttf);
   font-weight: bold;
 }
+html,body {
+  margin: 0%;
+  scroll-behavior: smooth;
+  height:85%;
+
+ }
 
 
 *{font-family: Comfortaa;
@@ -13,46 +19,77 @@
 
 .entredeux{
   color: #FFFAFA;
-  padding: 10px;
-  background-color: black  ;
+  padding: 3%;
+ background-color: black  ;
+
   text-align:center;
 
 }
 header{
   display: block;
-  height: 65px;
+  height:8%;
   text-align: center;
-  box-shadow: 5px 10px 18px #888888;
+  padding-top: 3%;
+  box-shadow: 5% 10% 18% #888888;
 
 }
+
+form
 a { color: inherit;
   text-decoration: none; }
 .questionat{
-  background-color:#00D672;
+
+  background-color:#00d607;
+  margin-left: auto;
+  margin-right: auto;
+  text-align:left;
+  padding-left: 20%;
+  margin-top: 3.5%;
+  width:40%;
+  height:100%:; 
   transition: box-shadow .3s;
-/* margin: 10px; */
+  border: 50%;
+  border-radius: 8.420%;
  color: #FFFAFA;
+ box-shadow: 0 0 15px rgba(33,33,33,.2);
 
  border: 1px solid #ccc;
- padding: 15px
+ padding: 15px;
+
 
 }
+
 
 .questionat:hover {
-  box-shadow: 0 0 30px rgba(33,33,33,.2);
+  box-shadow: 0 0 45px rgba(33,33,33,.2);
 }
 
-.page{background-color:#8A2BE2;
+.page{background-color:#d600cf ;
   color:  #FFFAFA;
   padding: 20px;
+  height: 100%;
   transition: box-shadow .5s;
+  border: 1px;
+  box-shadow: 10px 10px 10px rgba(33,33,33,.2) inset;
+
+}
+.page:hover{
+  transition: box-shadow .5s;
+  box-shadow: 20px 20px 20px   rgba(33,33,33,.2) inset;
+
+
 
 }
 
-.page:hover{box-shadow: 0 0 300px white;
+.lesite:hover{
+  width: 53%;
+  box-shadow: 50px 50px 50px rgba(33,33,33,.2);
+
 
 
 }
+
+
 
 select,option, .lqst ,textarea {
   color: black;
@@ -83,7 +120,8 @@ footer{
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-  padding: 10px;
+  padding: 2px;
+    transition: width 0.8s, height 0.8s;
 
 }
 
