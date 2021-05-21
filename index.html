@@ -7,49 +7,62 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=KoHo:wght@200&family=Pacifico&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="mystyle.css">
+<link rel="icon" href="favicon.ico">
+
 
 </head>
 <body>
   <header>
 
-
+<a href="index.html">
 <h1>leSONDAGE</h1>
-
+</a>
  </header>
 <div class="page">
 
-<h2>que pensez vous de <a href="https://www.patreon.com/fr-FR" > ce site</a></h2>
+<h2>que pensez vous de <a href="https://archive.org/" class="refdebut" > ce site ?</a></h2>
 
-<a href="https://www.patreon.com/fr-FR" class="imglink"><img src="web.PNG" class="lesite" alt=""  ></a>
+<a href="https://archive.org/" class="imglink"><img src="web.PNG" class="lesite" alt=""  ></a>
 </div>
-<div class="gotosondage">
-<a href="#leformulaire">
-<h3 class="entredeux">vous pouvez nous aider en remplissant ce sondage :</h3>
+<a href="#leformulaire" >
+<h3 class="entredeux">Aidez-nous en remplissant le sondage suivant :</h3>
   </a>
-</div>
 
 
 <div id="leformulaire">
 
 <form class="formulaire" action="index.html" method="post">
   <div class="questionat">
+    <ol>
 
-  <p>quetion :</p><br>
+
+  <li><p class="debut">qu'est-ce que vous a le plus marqué concernant l'interface du site ?</p><br></li>
+
   <input type="text" class="lqst" name="lquestion"><br>
-  <br><p>questiondyalradio</p><br>
-  <input type="radio" name="q2" value="choixa">a<br>
-  <input type="radio" name="q2" value="choixb">b<br>
-  <br><p>khtar mn lista</p><br>
-  <select name="fruit">
-    <option value ="none">Nothing</option>
-    <option value ="guava">Guava</option>
-    <option value ="lychee">Lychee</option>
-    <option value ="papaya">Papaya</option>
+<li>  <p class="debut">par quel bouton/menu avez-vous commencé pour le explorer le site ?</p><br></li>
+
+  <input type="text" class="lqst" name="lquestion"><br>
+
+<li>  <br><p>Étiez-vous perdus lors de votre première visite sur le site ?</p><br></li>
+  <input type="radio" name="q2" value="choixa"> Oui<br>
+  <input type="radio" name="q2" value="choixb"> Non<br>
+<li>  <br><p>que pensez vous du fait d'avoir deux barres de menus de navigations ?</p><br></li>
+  <input type="radio" name="q2" value="choixa"> c'est bien structuré<br>
+  <input type="radio" name="q2" value="choixb"> je ne m'y retrouve pas<br>
+
+  <li><br><p>Parmi les éléments de la liste ci-dessous , lequel jugez-vous qu'il est le plus pertinent de changer ?</p><br></li>
+  <select name="reason"><li>
+    <option value ="serch">la recherche</option>
+    <option value ="account"> accès/création d'un compte</option>
+    <option value ="categorie"> les catégories</option>
+    <option value ="collection"> Archives présentées par collection</option>
   </select><br>
-  <br><p>DAKCHI LI FEH CHOICES :</p><br>
-  <input type="checkbox" name="" value="">lbanan <br>
-  <input type="checkbox" name="" value="">ddddc<br>
-  <input type="checkbox" name="" value="">ffff<br>
+<li>  <br><p>lequel de ces changements est susceptible de rendre votre expérience plus agréable ?</p><br></li>
+  <input type="checkbox" name="" value=""> Un nouveau thème<br>
+  <input type="checkbox" name="" value=""> Une disposition différente<br>
+  <input type="checkbox" name="" value=""> Des menus plus simplifiée et organisést <br>
+    </ol>
+  <p></p>
  </div>
  <div class="coms">
 
@@ -58,7 +71,7 @@
    <h2>des commantaires?</h2><br>
 
 
-  <p>commantat:</p><br>
+  <p>si vous avez des commentaires, nous serions ravies des lires :</p><br>
   <textarea rows="10" cols="100"></textarea>
 </div>
 
