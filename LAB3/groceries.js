@@ -507,7 +507,7 @@ function restrictListProducts(prods, restrictions) {
 
 		}
 
-		console.log(check);
+
 
 
 
@@ -517,7 +517,6 @@ function restrictListProducts(prods, restrictions) {
 
 
 	}
-	console.log(filtredprods);
 	return filtredprods;
 
 }

@@ -12,7 +12,6 @@ function clickOnCheckout() {
 function updateTotalPrice(){
   var totalPrice=0;
   for (let i=0 ;i<cart.length;i++ ){
-    console.log(cart[i])
     totalPrice=totalPrice+parseFloat(cart[i].prix)
 
   }
@@ -22,13 +21,12 @@ function updateTotalPrice(){
 
 }
 function deleateProd(prod){
-console.log(prod);
 
 empla=prod.className;
 prod=prod.childNodes;
 name=prod[0].textContent;
 
-console.log(prod);
+
 
 for(let i =0 ;i<cart.length;i++){
   if (cart[i].nom==name){
@@ -47,7 +45,6 @@ updateTotalPrice()
 }
 function addToCart(prod){
 
-console.log(prod);
 cartdiv= document.getElementById("inpanier");
 
 proddiv=document.createElement('div');
@@ -95,12 +92,10 @@ proddiv.appendChild(tagprix);
 
 cartdiv.appendChild(proddiv);
 
-console.log(prx)
 
 cart.push({nom:prod.childNodes[0].textContent,
   prix:prx,
 })
-  console.log(cart)
 updateTotalPrice()
 
 
@@ -220,9 +215,6 @@ function initProds(){
   prodspage[index].appendChild(tagaddbtn);
 
 
-  console.log(prodspage[index].childNodes[7].onclick);
-
-  console.log(prodspage[index].childNodes);
 
 
 
@@ -280,7 +272,6 @@ function getPage(i,prods){
 
     maindiv=document.getElementById("products");
     prodspage=[];
-    console.log(maindiv);
     maindiv.innerHTML = "";
     for(let j=firstprod;j<lastprod;j++){
 
@@ -354,8 +345,7 @@ function getPage(i,prods){
 
       prodspage[index].appendChild(tagprix);
       tagaddbtn.onclick = function(){
-        console.log("aaaaaaaaaaaaaaaaaaaa");
-        console.log(this.parentElement)
+
         addToCart(this.parentElement)
       };
       prodspage[index].appendChild(tagaddbtn);
@@ -382,8 +372,7 @@ function getFiltredList(){
 
 function refreshprods(){
 filtredstuff= getFiltredList();
-console.log(filtredstuff)
-console.log("fffffffff")
+
 initPages(filtredstuff);
 getPage(1,filtredstuff);
 
