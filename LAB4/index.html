@@ -4,6 +4,19 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
 
+    <style >
+    .exps>div>div:hover{  box-shadow: 0 0 11px rgba(33,33,33,.2); }
+
+    footer{
+      background-color:  #DCDCDC;
+      margin-top:2%;
+      padding: 1%
+
+    }
+
+
+    </style>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Animalia : Centre de clinique Vétérinaire</title>
@@ -11,22 +24,25 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
   </head>
-    <div class="container-fluid">
-      <nav class="navbar navbar-light" style="background-image: url('équipe.jpg');">
-        <div class="container ">
+  <body >
 
-      <h1 class="text-center">
+    <div class="container-fluid" style="padding: 1%">
+      <nav class="navbar navbar-light rounded border border-success" style="background-image: url('équipe.jpg');">
+        <div class="container " style="padding: 2%" >
+
+      <h1 class="text-center" >
         <img src="vet.svg" alt="" width="60" height="48" class="center-block img-responsive">
       Animalia      </h1>
     </div>
 
   </nav>
 
-  <div class=" p-3 my-3 border bg-light">
+  <div class=" p-3 my-3 border   rounded ">
     <h3 class="text-center">Qui sommmes nous ?</h3>
+    <br>
     <p class="text-center">Bienvenue à la clinique Vétérinaire D'Animalia, notre clinique vétérinaire,
        située au coeur de la ville de Gatineau , est ouverte depuis 1992. Nos vétérinaires, techniciens vétérinaires,
-        et de personnel forment une équipe de passionnées qui seront toujours fières d’offrir une large gamme de services
+        et  personnel forment une équipe de passionnées qui seront toujours fières d’offrir une large gamme de services
         vétérinaires aux petits animaux de la région de l’Outaouais / Ottawa-Carleton.
      </p>
     <h3 class="text-center">Voulez vous nous rendre visite ?</h3>
@@ -38,8 +54,10 @@
   </div>
   <div class="">
     <h2 class="text-center">Nos services :</h2>
-    <p></p>
-    <table class="table table-info table-hover">
+    <div class="">
+
+    <p>Notre établissement propose les services suivants :</p>
+    <table class="table table-info  rounded" style="border-radius: 20px" >
         <thead>
             <tr>
                 <th scope="col"><h3>Service</h3></th>
@@ -92,41 +110,140 @@
 
         </tbody>
     </table>
+  </div>
+
 
   </div>
-  <div class="">
-    <h2>Prendre Rendez-vous</h2>
-    <p>wewefwefgwe4fweuregwiofefg4giwejriejgiojwqipigujpirjigipigijgiporjweig4wefg</p>
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
 
+  <h2 class="text-center">Notre équipe </h2>
+
+    <div class=" p-3 my-3 border   rounded ">
+      <p class="text-center">Nos experts seront à tout moment à votre écoute et feront de leurs mieux pour vous aider.</p>
+      <div class="exps">
+
+      <div class="row justify-content-around text-center">
+        <div class="card" style="width: 18rem;">
+            <img src="exp0.png" class="card-img-top rounded-circle border border-dark" alt="...">
+            <div class="card-body">
+              <h4 class="text-center">Dr.Rasha Anima </h4>
+              <b>Chef des veteinaires</b>
+
+              <br>
+                <i class="card-text">Université  de Montréal</i>
+
+                <i>____________</i>
+                <br>
+
+                <p>ayant obtenus un doctorat en médecine vétérinaire de l'Université de Montréal à St-Hyacinthe en 1982. Dr. Rasha est une vraie passionnée
+                    pour la médecine vétérinaire et le bien-être animal.</p>
+            </div>
+        </div>
+        <div class="card rounded " style="width: 18rem;">
+            <img src="exp1.png" class="card-img-top rounded-circle border border-dark" alt="...">
+            <div class="card-body">
+              <h4 class="text-center">Dr.Ahmed Aboulawid </h4>
+              <b>Chef du personnel</b>
+              <br>
+                <i class="card-text">Institut agronomique IAV</i>
+                <i>____________</i>
+                <br>
+
+                <p>Dre Roy a d’abord été diplômée en technique de santé animale a l'IAV au Maroc en 1993.
+                   IL travaille ensuite dans le domaine des petits animaux à Montreal. Toutefois, il choisit de poursuivre sa carriere en médecine vétérinaire a Gatineau.</p>
+            </div>
+        </div>
+        <div class="card rounded" style="width: 18rem;">
+            <img src="exp2.png" class="card-img-top rounded-circle border border-dark" alt="">
+            <div class="card-body">
+              <h4 class="text-center">Dr.Jean Dupolier</h4>
+              <b>Chef des techniciens veteinaires</b>
+              <br>
+                <i class="card-text">Université de Paris-Descartes</i>
+                <i>____________</i>
+                <br>
+
+                <p>Francais de naissance et il a obtenu son diplôme en médecine vétérinaire à Paris-Descartes en 1978. C’est en 1989, en Estrie, qu'il a décidé de s’installer a Gatineau.
+                   Source intarissable de connaissances vétérinaires , c'est plus que volontiers qu'il les partage avec qui que ce soit.</p>
+                <br>
+            </div>
+        </div>
+    </div>
+  </div>
+
+    </div>
+
+  <div class="">
+    <h2 class="text-center">Voulez-vous prendre un rendez-vous ? </h2>
+    <p class="text-center">un problème avec votre animal ? pas d'inquiétude n'attendez pas prenez rendez-vous dès que possible et nous nous ferons une joie de vous aider vous et votre bout de choux.</p>
+<div class="text-center" style="margin:">
+
+
+<button type="button" class="btn btn-primary center" data-bs-toggle="modal" data-bs-target="#exampleModal">
+prendre rendez-vous</button>
+
+
+</div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Prendre un rendez-vous</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+
+        <form>
+          <div class="form-group">
+
+            <label for="exampleFormControlInput1">Nom complet:</label>
+            <input type="nom" class="form-control" id="exampleFormControlInput1" placeholder="John Doe">
+
+            <label for="exampleFormControlInput2">Adresse courriel:</label>
+            <input type="nom" class="form-control" id="exampleFormControlInput2" placeholder="JohnDoe@mail.com">
+            <label for="exampleFormControlInput3">Numero de téléphone:</label>
+            <input type="nom" class="form-control" id="exampleFormControlInput3" maxlength="10" placeholder="numero valide a 10 chiffres">
+
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect2">Service:</label>
+            <select multiple class="form-control" id="exampleFormControlSelect2">
+              <option>Imagerie médicale</option>
+              <option>Dentisterie</option>
+              <option>Ophtalmologie</option>
+              <option>Neurologie</option>
+              <option>Chirurgie</option>
+              <option>Refuge</option>
+            </select>
+            <br>
+            <label for="birthdaytime"> Date et heure rendez-vous :</label>
+            <br>
+            <div class="text-center">
+
+ <input type="datetime-local" class="text-center" name="birthdaytime">
+</div>
+
+          </div>
+
+        </form>
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" >Prendre un rendez-vous</button>
       </div>
     </div>
   </div>
 </div>
 
-  </div>
 
-  <div class="">
-    <h2>notre equipe </h2>
+<footer>
+  <i>Animalia by M.D</i>
+  <br>
+  <i>2021 </i>
 
-    <h2>Nous Contact</h2>
+</footer>
+
+
   </div>
 
 
