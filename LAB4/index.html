@@ -14,6 +14,12 @@
 
     }
 
+    @font-face {
+      font-family: Merriweather-Regular;
+      src: url(Merriweather-Regular.ttf);
+      font-weight: bold;
+    }
+
 
     </style>
 
@@ -22,12 +28,16 @@
     <title>Animalia : Centre de clinique Vétérinaire</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="icon" href="veterinarian.png">
 
   </head>
-  <body >
+  <body style="background-color: f6f6f6 " >
 
-    <div class="container-fluid" style="padding: 1%">
-      <nav class="navbar navbar-light rounded border border-success" style="background-image: url('équipe.jpg');">
+    <div class="container-fluid" style="padding: 1%;
+    background-color: #f6f6f6 ">
+      <nav class="navbar navbar-light rounded border border-success" style="background-image:url(équipe.jpg)   ;">
         <div class="container " style="padding: 2%" >
 
       <h1 class="text-center" >
@@ -37,7 +47,7 @@
 
   </nav>
 
-  <div class=" p-3 my-3 border   rounded ">
+  <div class=" p-3 my-3 border   rounded " style="backbackground-color: white">
     <h3 class="text-center">Qui sommmes nous ?</h3>
     <br>
     <p class="text-center">Bienvenue à la clinique Vétérinaire D'Animalia, notre clinique vétérinaire,
@@ -57,7 +67,7 @@
     <div class="">
 
     <p>Notre établissement propose les services suivants :</p>
-    <table class="table table-info  rounded" style="border-radius: 20px" >
+    <table class="table table-hover shadow p-3 mb-5  rounded " style="background-color: #e0eeee;font-family: 'Roboto Slab', serif;" >
         <thead>
             <tr>
                 <th scope="col"><h3>Service</h3></th>
@@ -123,7 +133,7 @@
 
       <div class="row justify-content-around text-center">
         <div class="card" style="width: 18rem;">
-            <img src="exp0.png" class="card-img-top rounded-circle border border-dark" alt="...">
+            <img src="exp0.png" class="card-img-top rounded-circle border border-dark" style="margin-top:3%" alt="...">
             <div class="card-body">
               <h4 class="text-center">Dr.Rasha Anima </h4>
               <b>Chef des veteinaires</b>
@@ -139,7 +149,7 @@
             </div>
         </div>
         <div class="card rounded " style="width: 18rem;">
-            <img src="exp1.png" class="card-img-top rounded-circle border border-dark" alt="...">
+            <img src="exp1.png" class="card-img-top rounded-circle border border-dark" style="margin-top:3%" alt="...">
             <div class="card-body">
               <h4 class="text-center">Dr.Ahmed Aboulawid </h4>
               <b>Chef du personnel</b>
@@ -153,7 +163,7 @@
             </div>
         </div>
         <div class="card rounded" style="width: 18rem;">
-            <img src="exp2.png" class="card-img-top rounded-circle border border-dark" alt="">
+            <img src="exp2.png" class="card-img-top rounded-circle border border-dark" style="margin-top:3%" alt="">
             <div class="card-body">
               <h4 class="text-center">Dr.Jean Dupolier</h4>
               <b>Chef des techniciens veteinaires</b>
@@ -202,7 +212,7 @@ prendre rendez-vous</button>
             <label for="exampleFormControlInput2">Adresse courriel:</label>
             <input type="nom" class="form-control" id="exampleFormControlInput2" placeholder="JohnDoe@mail.com">
             <label for="exampleFormControlInput3">Numero de téléphone:</label>
-            <input type="nom" class="form-control" id="exampleFormControlInput3" maxlength="10" placeholder="numero valide a 10 chiffres">
+            <input type="nom" class="form-control" id="exampleFormControlInput3" maxlength="10" placeholder="(XXX) XXX-XXXX">
 
           </div>
           <div class="form-group">
@@ -236,12 +246,12 @@ prendre rendez-vous</button>
 </div>
 
 
-<footer>
-  <i>Animalia by M.D</i>
+<footer class="rounded">
+  <i>Animalia by M.D®</i>
   <br>
   <i>2021 </i>
 
-</footer>
+</footer >
 
 
   </div>
