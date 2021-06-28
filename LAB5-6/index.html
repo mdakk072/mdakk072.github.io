@@ -633,7 +633,9 @@
 -->
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-outline-light">Prendre un rendez-vous</button>
+        <i style="color:green" id="confrimrdv"> rendez-vous confirmé</i>
+        <button type="button" onclick="confirm()" class="btn btn-outline-light">Prendre un rendez-vous</button>
+
       </div>
     </div>
   </div>
@@ -644,6 +646,19 @@
   <i>2021 </i>
 
 </footer>
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+<div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+<div class="toast-header">
+<img src="..." class="rounded me-2" alt="...">
+<strong class="me-auto">Bootstrap</strong>
+<small>11 mins ago</small>
+<button id="liveToastBtn" type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+</div>
+<div class="toast-body">
+Hello, world! This is a toast message.
+</div>
+</div>
+</div>
 
 
   </div>
@@ -668,6 +683,7 @@ function showdp(){
   $(".form-grouph").hide();
   $("#dpdiv").hide()
   $(".dpmsg").hide()
+  $("#confrimrdv").hide()
   $(".alertnom").hide()
   $(".alertnum").hide()
   $(".alertmail").hide()

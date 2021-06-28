@@ -147,7 +147,7 @@ function checkcvv() {
     var a =  $('#cvv')[0].value;
     // This filter asks for something like (12345), so parentheses with any number (at least 1)
     // of digits
-    var filter = /^[0-9]{3, 4}$/;
+    var filter = /^[0-9]{3,4}$/;
     if (filter.test(a)) {
       console.log("non")
 
@@ -165,6 +165,9 @@ function checkcvv() {
 }
 
 
+function confirm(){
+  $("#confrimrdv").show()
+}
 function checkcbdate() {
 
 
@@ -215,3 +218,11 @@ function checkcb() {
 
     }
 }
+
+
+
+$(document).ready(function(){
+  $("#button1").click(function(){
+    $('.toast').toast('show');
+  });
+});
