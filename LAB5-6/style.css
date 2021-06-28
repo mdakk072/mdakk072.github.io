@@ -5,9 +5,24 @@
 }
 
 
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+
+      color: #495057!important;
+}
+
+
 *{
 }
 
+ .ui-datepicker{
+   position: fixed;
+   top: 50%!important;
+   right: 50%!important;
+   z-index: 1061;
+   display: block;
+   left: 666.8px;
+}
+ }
 
 .btn:focus {
   outline: none;
@@ -31,6 +46,33 @@ h1{
 * ==========================================
 *
 */
+
+.somecssclass a{
+
+  background: rgba(0, 0, 0,0.7)!important;
+  color: white!important;
+
+}
+
+ .someothercssclass a{
+
+background: rgba(192, 192, 192,0.7)!important;
+color: white!important;
+}
+#ui-datepicker-div > div{
+
+
+background: rgba(1,1,1,0.3);
+border-color: white;
+}
+.ui-datepicker-calendar thead tr th{
+  color: white
+}
+
+#ui-datepicker-div{
+      background: rgba(15,35,46,.5);
+}
+
 .bg-cover {
     background-size: cover;
 }

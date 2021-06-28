@@ -28,6 +28,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&amp;display=swap" rel="stylesheet">
     <link rel="icon" href="veterinarian.png">
+    <link href=
+ 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css'
+           rel='stylesheet'>
+
+     <script src=
+ "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" >
+     </script>
+
+     <script src=
+ "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" >
+     </script>
+
+
 
   </head>
   <body style="padding: 0;
@@ -60,8 +73,10 @@
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Acceuil</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#notreequipe">Notre équipe </a>
+                  <li class="nav-item" style="display: inline-block">
+
+                    <a class="nav-link" href="#notreequipe">
+                      Notre équipe </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#services">Nos services</a>
@@ -110,9 +125,9 @@
       ">
          <h2 class="text-center" style="margin: 0;
 
-        "><img src="iconvet.png">
+        "><img src="iconvetf.png" style="padding-right: 1%; opacity: 87% ;height: 14%">
         Notre équipe
-        <img src="iconvet.png">
+      <img src="iconvet.png" style="padding-left: 1%; opacity: 87% ;height: 14%">
     </h2>
 
        </div>
@@ -202,9 +217,9 @@
       ">
          <h2 class="text-center" style="margin: 0;
 
-        "><img src="iconservice.png">
+        "><img src="iconservice.png" style="padding-right: 1%; opacity: 87%; height: 14%">
         Nos services
-        <img src="iconservice.png">
+        <img src="iconservice.png" style="padding-left: 1%; opacity: 87% ;height: 14%">
     </h2>
 
        </div>
@@ -230,8 +245,10 @@
                 <button class="accordion-button text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style="background-color: rgba(0,0,0,0.64);
                 box-shadow: none;
 ">
-                    Contrôles et visites
-                </button>
+
+
+              <img src="iconcheck.png" style="padding-right: 1%" alt="">
+                    Contrôles et visites</button>
             </h2>
             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample" style="">
                 <div class="accordion-body p-0 ">
@@ -297,7 +314,8 @@
 ">
             <h2 class="accordion-header" id="flush-headingTwo">
                 <button class="accordion-button text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo" style="background-color: rgba(0,0,0,0.642);  box-shadow: none;
-">
+">              <img src="iconhosp.png" style="padding-right: 1%" alt="">
+
                     Hospitalisation
                 </button>
             </h2>
@@ -350,6 +368,8 @@
     box-shadow: none;
 
 ">
+<img src="servsupp.png" style="padding-right: 1%" alt="">
+
                     Services supplémentaires
                 </button>
             </h2>
@@ -389,7 +409,7 @@
     </div>
                 <p class="lead demo-text mb-1 " style="padding: 2%">Avez-vous besoin de l'un de nos services ?</p>
                <p class="lead demo-text mb-1"  style="padding: 2%">Prenez un rendez-vous dès maintenant </p>
-               <a class="btn btn-outline-light rounded-0 px-5"data-bs-toggle="modal" data-bs-target="#exampleModal">Prendre un rendez-vous</a>
+               <a id="ff" class="btn btn-outline-light rounded-0 px-5"data-bs-toggle="modal" data-bs-target="#exampleModal">Prendre un rendez-vous</a>
            </div>
        </div>
    </div>
@@ -403,58 +423,210 @@
   <div class="">
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none; background-color: rgba(255, 255, 255, 0.1);" aria-hidden="true">
+  <div class="modal-dialog" style="
+     background-color: rgba(0,0,0,0.3);
+">
+    <div class="modal-content text-white" style="
+    background-color: rgba(192,192,192,0.7);
+">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Prendre un rendez-vous</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        <ul class="nav nav-tabs "  id="myTab" role="tablist">
+  <li class="nav-item" role="presentation" >
+    <button style="color:white" class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Vos informations</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button style="color:white" class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Paiement</button>
+  </li>
 
-        <form>
-          <div class="form-group">
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <form>
+      <div class="form-group">
 
-            <label for="exampleFormControlInput1">Nom complet:</label>
-            <input type="nom" class="form-control" id="exampleFormControlInput1" placeholder="John Doe">
+        <label for="nom">Nom complet:</label>
 
-            <label for="exampleFormControlInput2">Adresse courriel:</label>
-            <input type="nom" class="form-control" id="exampleFormControlInput2" placeholder="JohnDoe@mail.com">
-            <label for="exampleFormControlInput3">Numero de téléphone:</label>
-            <input type="nom" class="form-control" id="exampleFormControlInput3" maxlength="10" placeholder="(XXX) XXX-XXXX">
+        <input onchange="checknom()" style="color: black" type="nom" class="form-control btn-outline-light" id="nom" placeholder="John Doe">
+        <i style="color: red" class="alertnom">Le nom n'est pas valide !</i>
+<br>
 
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlSelect2">Service:</label>
-            <select multiple="" class="form-control" id="exampleFormControlSelect2">
-              <option>Imagerie médicale</option>
-              <option>Dentisterie</option>
-              <option>Ophtalmologie</option>
-              <option>Neurologie</option>
-              <option>Chirurgie</option>
-              <option>Refuge</option>
-            </select>
-            <br>
-            <label for="birthdaytime"> Date et heure du rendez-vous :</label>
-            <br>
-            <div class="text-center">
 
- <input type="datetime-local" class="text-center" name="birthdaytime">
-</div>
+        <label for="mail">Adresse courriel:</label>
+        <input onchange="checkmail()" style="color: black" type="nom" class="form-control btn-outline-light" id="mail" placeholder="JohnDoe@mail.com">
+        <i style="color: red" class="alertmail">L'adresse courriel n'est pas valide !</i>
+<br>
 
-          </div>
+        <label for="exampleFormControlInput3">Numero de téléphone:</label>
 
-        </form>
+        <input onchange="checknum()" style="color: black" type="nom" class="form-control btn-outline-light" id="exampleFormControlInput3" maxlength="10" placeholder="(XXX) XXX-XXXX">
+        <i style="color: red" class="alertnum">Le numero de telephone n'est pas valide !</i>
+<br>
+
+        <label for="exampleFormControlSelect2">Service:</label>
+        <select onchange="updatePero()" style="color: black" onchange="" class="form-control btn-outline-light" id="exampleFormControlSelect2">
+          <optgroup label="Contrôles et visites">
+              <option value="Consultation">Consultation</option>
+              <option value="Imagerie médicale">Imagerie médicale</option>
+              <option value="Analyses de laboratoire et parasitologie">Analyses de laboratoire et parasitologie</option>
+              <option value="Vaccination">Vaccination</option>
+              <option value="Nutrition">Nutrition</option>
+              <option value="Euthanasie">Euthanasie</option>
+          </optgroup>
+
+          <optgroup label="Hospitalisation">
+              <option value="Dentisterie">Dentisterie</option>
+              <option value="Ophtalmologie">Ophtalmologie</option>
+              <option value="Neurologie">Neurologie</option>
+              <option value="Chirurgie">Chirurgie</option>
+          </optgroup>
+    </select>
+        <br>
 
       </div>
+      <div class="form-grouph" style="    ">
+
+        <label for="personnesdispo"> Expert avec qui vous souhaitez prendre rendez-vous :</label>
+        <select onchange='showdp() ' size="5"  style="color: black"  class="form-control" id="personnesdispo">
+
+            </select>
+        <label class="dpmsg" for="birthdaytime"> Date et heure du rendez-vous :</label>
+        <br>
+        <div  id="dpdiv"  class="text-center">
+
+<input type="text" id="my_date_picker">
+<script>
+  $("#dpdiv").show()
+  $(".dpmsg").show()
+       $(document).ready(function() {
+
+           $(function() {
+               $( "#my_date_picker" ).datepicker(
+
+               { beforeShowDay: function(day) {
+
+                 index = $('#personnesdispo')[0].selectedIndex
+
+                   var day = day.getDay();
+
+                   console.log(prevserv[index].jours);
+
+                   for(var h=0 ;h<prevserv[index].jours.length;h++){
+                        console.log(prevserv[index].jours[h]);
+                     if (prevserv[index].jours.includes(day)) {
+                         return [false, "somecssclass"]
+                     }
+                     else {
+                             return [true, "someothercssclass"]
+                         }
+
+                   }
+
+                }
+               }
+
+
+               );
+           });
+       })
+   </script>
+
+
+
+<script>
+  $("#dpdiv").show()
+  $(".dpmsg").show()
+       $(document).ready(function() {
+
+           $(function() {
+               $( "#my_date_picker" ).datepicker(
+
+               { beforeShowDay: function(day) {
+
+                 index = $('#personnesdispo')[0].selectedIndex
+
+                   var day = day.getDay();
+
+                   console.log(prevserv[index].jours);
+
+                   for(var h=0 ;h<prevserv[index].jours.length;h++){
+                        console.log(prevserv[index].jours[h]);
+                     if (prevserv[index].jours.includes(day)) {
+                         return [false, "somecssclass"]
+                     }
+                     else {
+                             return [true, "someothercssclass"]
+                         }
+
+                   }
+
+                }
+               }
+
+
+               );
+           });
+       })
+   </script>
+
+
+
+
+</div>
+
+      </div>
+
+    </form>
+  </div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+    <form>
+      <div class="form-group">
+
+        <label for="numerocb">Numero de la carte bancaire :</label>
+        <input style="color: black" type="nom" onchange="checkcb()" class="form-control btn-outline-light" id="numerocb" placeholder="XXXX XXXX XXXX XXXX">
+        <i style="color: red" class="alertcbn">Le numéro de carte entree n'est pas valide !</i>
+<br>
+        <label for="cbdate">Date d'expiration</label>
+        <input onchange="checkcbdate()" style="color: black" type="nom" class="form-control btn-outline-light" id="cbdate" placeholder="mm/aa">
+        <i style="color: red" class="alertdatecb">La date d'expiration entrée n'est pas valide !</i>
+<br>
+        <label for="cvv">CVV</label>
+        <input onchange="checkcvv()" style="color: black" class="form-control btn-outline-light" id="cvv" maxlength="10" placeholder="000">
+        <i style="color: red" class="alertcvv">Le code CVV entré n'est pas valide !</i>
+        <br>
+        <i >*le CVV est un code de 3-4 chiffres se situe à l'arrière de votre carte</i>
+
+        <br>
+
+      </div>
+
+
+    </form>
+  </div>
+</div>
+        <!-- Tabs navs -->
+
+<!-- Tabs navs -->
+
+<!-- Tabs content -->
+
+<!-- Tabs content -->
+
+<!-- IDEA:
+
+-->
+      </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Prendre un rendez-vous</button>
+        <button type="button" class="btn btn-outline-light">Prendre un rendez-vous</button>
       </div>
     </div>
   </div>
 </div>
-
-
 <footer class="rounded">
   <i>Animalia by M.D®</i>
   <br>
@@ -465,13 +637,38 @@
 
   </div>
 
-
-    </div>
-
     <script src="main.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
+<script type="text/javascript">
 
+function showdp(){
+  $("#dpdiv").show();
+    $(".dpmsg").show();
+    $('#my_date_picker').datepicker('setDate', null);
+
+
+
+}
+
+  $("#ff").click(function(){
+    console.log('ff')
+  $(".form-grouph").hide();
+  $("#dpdiv").hide()
+  $(".dpmsg").hide()
+  $(".alertnom").hide()
+  $(".alertnum").hide()
+  $(".alertmail").hide()
+  $(".alertcbn").hide()
+  $(".alertdatecb").hide()
+  $(".alertcvv").hide()
+  $( "#exampleFormControlSelect2" ).prepend( '<option class="rmv" value=" "> </option>' );
+  $("#exampleFormControlSelect2").val('0');
+
+  });
+
+
+</script>
 
 </body></html>
