@@ -165,8 +165,10 @@ function checkcvv() {
 }
 
 
-function confirm(){
+function confirmerrdv(){
   $("#confrimrdv").show()
+  alert("Rendez-vous confirmé !");
+
 }
 function checkcbdate() {
 
