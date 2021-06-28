@@ -38,6 +38,7 @@ function updatePero(){
   $ (".rmv").remove();
   $(".form-grouph").show();
   service = $('#exampleFormControlSelect2')[0].value;
+  console.log('aaaaaaaaaaaaaa')
   console.log(service);
 
   persdispo=[];
@@ -62,7 +63,7 @@ function updatePero(){
 $("#personnesdispo").empty();
 for (var k=0 ; k<persdispo.length;k++){
   var opt = $("<option></option>").text(persdispo[k].nom);
-  $("#numerocb").append(opt);
+  $("#personnesdispo").append(opt);
 }
 
 prevserv=persdispo
