@@ -569,6 +569,17 @@
 
 
                );
+
+               $("#my_date_picker").timepicker({
+                    hourGrid: 4,
+                    minuteGrid: 10,
+                    timeFormat: "hh:mm tt",
+                    addSliderAccess: true,
+                    sliderAccessArgs: { touchonly: true },
+                    stepHour: 2, // hour interval step
+                    stepMinute: 10, // minute interval step
+                    stepSecond: 10, // second interval step
+                });
            });
        })
    </script>
