@@ -1,0 +1,49 @@
+@font-face {
+    font-family: Boarding;
+    src: url(Boarding.ttf);
+}
+
+
+    .titre {
+        font-family: Boarding;
+        align-items: flex-end;
+        display: flex;
+        
+    }
+
+
+
+    .navlink{
+        transition: transform .2s;
+    }
+
+    .navlink:hover{
+        transform: scale(1.1);
+    }
+   
+
+
+   .carousel-item:before {
+        content: "";
+        background-image:
+          linear-gradient(
+            to bottom,
+            transparent, rgba(0,0,0,0.6)
+          );
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+
+/*
+    #myCarousel .carousel-item{
+        height:60%
+      }
+      #myCarousel .carousel-item img{
+        height: 100%;
+      }   */
+
+
+
