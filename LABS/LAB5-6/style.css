@@ -1,0 +1,130 @@
+@font-face {
+  font-family: AustieBostKittenKlub;
+  src: url(AustieBostKittenKlub.ttf);
+  font-weight: bold;
+}
+
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+
+      color: #495057!important;
+}
+
+
+*{
+}
+
+ .ui-datepicker{
+   position: fixed;
+   top: 50%!important;
+   right: 50%!important;
+   z-index: 1061;
+   display: block;
+   left: 666.8px;
+}
+ }
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+h1{
+  display: block;
+  margin: auto;
+  font-family: AustieBostKittenKlub;
+  color: floralwhite;
+
+  text-shadow: black 0.05em 0.05em 0.1em
+}
+
+
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSES
+* ==========================================
+*
+*/
+
+.somecssclass a{
+
+  background: rgba(0, 0, 0,0.7)!important;
+  color: white!important;
+
+}
+
+ .someothercssclass a{
+
+background: rgba(192, 192, 192,0.7)!important;
+color: white!important;
+}
+#ui-datepicker-div > div{
+
+
+background: rgba(1,1,1,0.3);
+border-color: white;
+}
+.ui-datepicker-calendar thead tr th{
+  color: white
+}
+
+#ui-datepicker-div{
+      background: rgba(15,35,46,.5);
+}
+
+.bg-cover {
+    background-size: cover;
+}
+
+.bg-center {
+    background-position: center center;
+}
+
+code {
+  background: #fff;
+  padding: 0.2rem;
+  border-radius: 0.1rem;
+  text-shadow: none;
+}
+
+.demo-text {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+}
+
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+
+.overlay-dark {
+    position: relative;
+}
+
+.overlay-dark::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #000;
+    display: block;
+    opacity: 0.55;
+}
+
+.overlay-content {
+    z-index: 99;
+    position: relative;
+}
+
+.scrolled-down{
+  transform:translateY(-100%); transition: all 0.2s ease-in-out;
+}
+.scrolled-up{
+  transform:translateY(0); transition: all 0.2s ease-in-out;
+}

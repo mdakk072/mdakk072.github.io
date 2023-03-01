@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="mystyle.css">
+
+    <meta charset="utf-8">
+    <title>
+      O'picerie
+    </title>
+  </head>
+  <body>
+    <header>
+
+    <div class="titre">
+      <span>
+        <h1>O'picerie</h1>
+        </span>
+    </div>
+
+
+
+
+
+
+
+  </header>
+
+
+
+      <div class="menuscriteres">
+        <h2>Avez-vous des preferences ?</h2>
+
+        <div id="choix">
+
+
+        <input type="checkbox" name="" value="LactoseFree" onclick="refreshprods()"> intolérant au lactose
+        <input type="checkbox" name="" value="glutenFree" onclick="refreshprods()"> intolérant au Gluten
+        <input type="checkbox" name="" value="noixfree" onclick="refreshprods()"> allergique au noix
+         <input type="checkbox" name="" value="organic" onclick="refreshprods()"> Produits Organiques
+         <input type="checkbox" name="" value="light" onclick="refreshprods()"> Produit Light
+         <input type="checkbox" name="" value="vegetarian" onclick="refreshprods()">Vergatarien
+</div>
+
+
+
+
+
+
+
+      </div>
+
+
+      <div id="products">
+
+
+
+      </div>
+
+      <div id="divpages">
+
+      </div>
+
+<div class="cartzone">
+
+
+      <div id="cart">
+        <span class="headpanier">
+          <h3>Panier</h3>
+        </span>
+        <div id="inpanier">
+
+        </div>
+
+
+        <div id="cartprice">
+          <p>Prix Total : </p>
+          <p id="prixTotal"></p>
+
+        </div>
+      </div>
+
+    <button class="checkoutbtn"  onclick="clickOnCart()">
+
+
+      <img class="cartimg" src="trolley.png" alt="">
+
+
+       </button>
+     </div>
+
+
+     <footer>
+       <i class="signature">Par mdakk072</i>
+     </footer>
+
+
+
+
+
+
+       <script src="groceries.js">
+
+
+       </script>
+
+
+<script src="main.js"></script>
+
+
+
+  </body>
+
+</html>

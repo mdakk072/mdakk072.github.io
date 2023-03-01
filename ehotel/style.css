@@ -1,0 +1,559 @@
+.bg-gradient-secondary {
+    background: #5AC8FA; /* Fallback */
+    background: -webkit-linear-gradient(45deg, #5AC8FA, #EED2B9);
+    background: linear-gradient(45deg, #5AC8FA, #EED2B9);
+  }
+  
+
+
+body {
+  background-color: #f7f7f7;
+}
+
+.bg-gradient-secondary {
+  background: #5AC8FA; /* Fallback */
+  background: -webkit-linear-gradient(45deg, #5AC8FA, #EED2B9);
+  background: linear-gradient(45deg, #5AC8FA, #EED2B9);
+}
+
+.container-fluid {
+  padding: 0;
+}
+  
+  header {
+    position: relative;
+    height: 20vh;
+    overflow: hidden;
+    }
+    
+    .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #41B9F5;
+    background-image: radial-gradient(circle at 30% 107%, #41B9F5, #FC3158);
+    filter: blur(10px);
+    opacity: 0.9;
+    animation: bgAnimation 20s ease-in-out infinite alternate;
+    }
+    
+    @keyframes bgAnimation {
+    0% {
+    opacity: 0.9;
+    }
+    50% {
+    opacity: 0.6;
+    filter: blur(8px);
+    }
+    100% {
+    opacity: 0.9;
+    }
+    }
+    
+    .container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    }
+    
+    h1 {
+  text-align: center;
+  font-size: 3rem;
+
+  color: #fff;
+
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 2;
+}
+
+h1:before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #000;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+h1:hover:before {
+  opacity: 1;
+}
+
+h1:after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  border: 3px solid #fff;
+  z-index: -2;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+h1:hover:after {
+  opacity: 1;
+}
+
+h1[data-text="Dashboard Employé"] {
+  color: #1b1b1b;
+}
+    
+    
+    .circle-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+      
+      .circle {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        animation: circleAnimation 20s ease-in-out infinite alternate;
+      }
+      
+      .circle-1 {
+        top: 15%;
+        left: 20%;
+        animation-duration: 24s;
+        opacity: 0.5;
+      }
+      
+      .circle-2 {
+        top: 35%;
+        left: 60%;
+        animation-duration: 20s;
+      }
+      
+      .circle-3 {
+        top: 55%;
+        left: 30%;
+        animation-duration: 22s;
+        opacity: 0.4;
+      }
+      
+      .circle-4 {
+        top: 70%;
+        left: 80%;
+        animation-duration: 18s;
+      }
+      
+      @keyframes circleAnimation {
+        0% {
+          transform: scale(1);
+          opacity: 0.1;
+        }
+        50% {
+          transform: scale(1.2);
+          opacity: 0.3;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0.1;
+        }
+      }
+      
+
+
+  
+  .text-white {
+    color: #fff;
+  }
+  
+  .py-5 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  @media (min-width: 768px) {
+    .py-5 {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+
+  .main-container {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 10px;
+  }
+  
+  .card {
+    background-color: rgba(128, 128, 128, 0.2); /* Gris semi-transparent */
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-header {
+    background-color: rgba(128, 128, 128, 0.2); /* Gris semi-transparent */
+    border-radius: 10px 10px 0 0;
+  }
+    .card-header {
+    background-color: rgba(128, 128, 128, 0.2); /* Gris semi-transparent */
+    border-radius: 10px 10px 0 0;
+  }
+
+
+/* Footer */
+/* Footer */
+footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 30px 0;
+  position: relative;
+  z-index: 10;
+  margin-top: 50px;
+}
+
+footer h5 {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+footer p {
+  font-size: 12px;
+  margin: 0 0 10px;
+}
+
+footer a {
+  color: #fff;
+  font-size: 12px;
+}
+
+footer a:hover {
+  color: #ccc;
+}
+
+footer .form-group label {
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+footer .form-control {
+  border-color: #fff;
+  color: #fff;
+}
+
+footer .form-control:focus {
+  box-shadow: none;
+}
+
+footer .btn-outline-light {
+  background-color: transparent;
+  border-color: #fff;
+  color: #fff;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+footer .btn-outline-light:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Social Media Icons */
+footer .fab {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+footer .fab:hover {
+  color: #ccc;
+  cursor: pointer;
+}
+
+/* Transparent Overlay */
+footer::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+
+.main-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 50px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  background-color: #F9F9F9;
+  font-weight: bold;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-body h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.card-body p {
+  font-size: 1.2rem;
+  color: #555;
+}
+/* Pour les cartes */
+/* définition des couleurs */
+:root {
+  --main-color: #0D6EFD;
+  --accent-color: #198754;
+  --light-color: #F8F9FA;
+  --dark-color: #212529;
+}
+
+/* animation du fond */
+@keyframes bg-animation {
+  0% {
+    background-color: var(--light-color);
+  }
+  50% {
+    background-color: var(--main-color);
+  }
+  100% {
+    background-color: var(--light-color);
+  }
+}
+
+/* style du fond 
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: bg-animation 10s ease-in-out infinite;
+}
+*/
+/* Définition des couleurs */
+/* Style du flou de l'arrière-plan */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: bg-animation 10s ease-in-out infinite;
+}
+
+#blur-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7); /* Couleur blanche avec une opacité de 70% */
+  backdrop-filter: blur(5px); /* Ajoute un flou à l'arrière-plan */
+  z-index: -1;
+}
+
+#content {
+  position: relative;
+  z-index: 1;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: bg-animation 10s ease-in-out infinite;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-color: #F3F3F3; /* Couleur claire qui va avec le header et le footer */
+    opacity: 0.7; /* Rend l'arrière-plan opaque à 70% */
+  }
+  25% {
+    background-color: #FF2D55; /* Couleur vive rouge */
+    opacity: 0.7; /* Rend l'arrière-plan opaque à 70% */
+  }
+  50% {
+    background-color: #34C759; /* Couleur vive verte */
+    opacity: 1; /* Rend l'arrière-plan opaque à 100% */
+  }
+  75% {
+    background-color: #FF9500; /* Couleur vive orange */
+    opacity: 0.7; /* Rend l'arrière-plan opaque à 70% */
+  }
+  100% {
+    background-color: #F3F3F3; /* Couleur claire qui va avec le header et le footer */
+    opacity: 0.7; /* Rend l'arrière-plan opaque à 70% */
+  }
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: bg-animation 10s ease-in-out infinite;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-color: #F3F3F3; /* Couleur claire qui va avec le header et le footer */
+    opacity: 0.7; /* Rend l'arrière-plan opaque à 70% */
+  }
+  20% {
+    background-color: #007AFF; /* Couleur vive bleue */
+    opacity: 0.7; /* Rend l'arrière-plan opaque à 70% */
+  }
+  40% {
+    background-color: #FF2D55; /* Couleur vive rouge */
+    opacity: 0.7; /* Rend l'arrière-plan opaque à 70% */
+  }
+  60% {
+    background-color: #34C759; /* Couleur vive verte */
+    opacity: 1; /* Rend l'arrière-plan opaque à 100% */
+  }
+  80% {
+    background-color: #FF9500; /* Couleur vive orange */
+    opacity: 0.7; /* Rend l'arrière-plan opaque à 70% */
+  }
+  100% {
+    background-color: #F3F3F3; /* Couleur claire qui va avec le header et le footer */
+    opacity: 0.7; /* Rend l'arrière-plan opaque à 70% */
+  }
+}
+/* Styles des cercles */
+.cercle {
+  position: absolute;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  z-index: -2;
+}
+
+.cercle-8 {
+  top: -100px;
+  left: -100px;
+  background-color: rgba(255, 45, 85, 0.3);
+}
+
+.cercle-9 {
+  top: -100px;
+  left: 100px;
+  background-color: rgba(255, 149, 0, 0.3);
+}
+
+.cercle-10 {
+  top: -100px;
+  right: -100px;
+  background-color: rgba(52, 199, 89, 0.3);
+}
+
+.cercle-11 {
+  bottom: -100px;
+  left: -100px;
+  background-color: rgba(10, 132, 255, 0.3);
+}
+
+.cercle-12 {
+  bottom: -100px;
+  right: -100px;
+  background-color: rgba(191, 90, 242, 0.3);
+}
+
+.cercle-13 {
+  top: 150px;
+  left: -100px;
+  background-color: rgba(255, 45, 85, 0.3);
+}
+
+.cercle-14 {
+  top: 150px;
+  right: -100px;
+  background-color: rgba(52, 199, 89, 0.3);
+}
+
+.cercle-15 {
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: -1;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+/* Styles de l'arrière-plan */
+.blur-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+  animation: bg-animation 10s ease-in-out infinite;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-color: #FFFFFF; /* Couleur blanche */
+    opacity: 0.7; /* Rend l'arrière-plan opaque à 70% */
+  }
+  20% {
+    opacity: 1; /* Rend l'arrière-plan opaque à 100% */
+  }
+  25% {
+    background-color: rgba(255, 45, 85, 0.2); /* Couleur vive rouge */
+    opacity: 0.7; /* Rend l'arrière-plan opaque à 70% */
+  }
+  40% {
+    opacity: 1; /* Rend l'arrière-plan opaque à 100% */
+  }
+  45% {
+    background-color: rgba(255, 149, 0, 0.2); /* Couleur vive orange */
+    opacity: 0.7; /* Rend l'arrière-plan opaque à 70% */
+  }
+  60% {
+    opacity:

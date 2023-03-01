@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>e-Hôtels - Dashboard Employé</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Inclusion des styles de Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  <!-- Inclusion de votre fichier style.css -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Inclusion des scripts de Bootstrap (jQuery et Popper.js) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+
+
+  <style>
+
+    
+  </style>
+</head>
+
+
+<body>
+  <div id="blur-bg"></div>
+
+
+  <div id="content">
+    <div class="circle circle-8"></div>
+    <div class="circle circle-9"></div>
+    <div class="circle circle-10"></div>
+    <div class="circle circle-11"></div>
+    <div class="circle circle-12"></div>
+    <div class="circle circle-13"></div>
+    <header>
+        <div class="bg"></div>
+        <div class="container">
+            <h1 class="animate__animated animate__fadeInDown p-1">e-Hôtels</h1>
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+            <div class="circle circle-4"></div>
+        </div>
+    </header>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+  
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow">
+      <div class="container">
+          <a class="navbar-brand text-uppercase font-weight-bold" href="#">Dashboard Employé</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                      <a class="nav-link text-uppercase" href="#">Accueil</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link text-uppercase" href="#">Profil</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link text-uppercase" href="#">Déconnexion</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link text-uppercase" href="#">Réservations</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link text-uppercase" href="#">Locations</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+      
+    
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        <!-- Menu de navigation pour accéder aux différentes sections -->
+        <div class="list-group m-3">
+          <a href="#profile" class="list-group-item list-group-item-action">Mon profil</a>
+          <a href="#reservations" class="list-group-item list-group-item-action">Mes réservations</a>
+          <a href="#locations" class="list-group-item list-group-item-action">Mes locations</a>
+          <a href="#invoices" class="list-group-item list-group-item-action">Mes factures</a>
+          <a href="#contacts" class="list-group-item list-group-item-action">Contacts de l'hôtel</a>
+        </div>
+      </div>
+      <div class="col-md-9 ">
+        <!-- Section pour afficher les informations de profil de l'employé -->
+        <div id="profile" class="card m-2 mt-3">
+          <div class="card-header">
+            Mon profil
+          </div>
+          <div class="card-body p-1" >
+            <h5 class="card-title">Nom complet de l'employé</h5>
+            <p class="card-text">Adresse de l'employé</p>
+            <p class="card-text">Numéro de sécurité sociale / NAS de l'employé</p>
+          </div>
+        </div>
+        <!-- Section pour afficher les réservations actuelles de l'employé -->
+        <div id="reservations" class="card m-2 mt-3">
+          <div class="card-header">
+            Mes réservations
+          </div>
+          <div class="card-body p-1" >
+            <!-- Tableau pour afficher les réservations -->
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Date d'arrivée</th>
+                  <th>Date de départ</th>
+                  <th>Hôtel</th>
+                  <th>Type de chambre</th>
+                  <th>Prix</th>
+                  <th>Statut</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Les réservations de l'employé seront ajoutées ici dynamiquement -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Section pour afficher les locations actuelles de l'employé -->
+        <div id="locations" class="card m-2 mt-3">
+          <div class="card-header">
+            Mes locations
+          </div>
+          <div class="card-body p-1" >
+            <!-- Tableau pour afficher les locations -->
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Date de début</th>
+                  <th>Date de fin</th>
+                  <th>Hôtel</th>
+                  <th>Type de chambre</th>
+                  <th>Prix</th>
+                  <th>Statut</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Les locations de l'employé seront ajoutées ici dynamiquement -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Section pour afficher les factures de l'employé -->
+        <div id="invoices" class="card m-2 mt-3">
+          <div class="card-header">
+            Mes factures
+          </div>
+          <div class="card-body p-1" >
+                      <!-- Tableau pour afficher les factures -->
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Numéro de facture</th>
+                <th>Date de facture</th>
+                <th>Total</th>
+                <th>Statut</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Les factures de l'employé seront ajoutées ici dynamiquement -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Section pour afficher les contacts de l'hôtel -->
+      <div id="contacts" class="card m-2 mt-3">
+        <div class="card-header">
+          Contacts de l'hôtel
+        </div>
+        <div class="card-body p-1" >
+          <h5 class="card-title">Réception</h5>
+          <p class="card-text">Numéro de téléphone : 123-456-7890</p>
+          <p class="card-text">Adresse e-mail : reception@hotel.com</p>
+          <h5 class="card-title">Service à la clientèle</h5>
+          <p class="card-text">Numéro de téléphone : 123-456-7891</p>
+          <p class="card-text">Adresse e-mail : service@hotel.com</p>
+          <h5 class="card-title">Réservations</h5>
+          <p class="card-text">Numéro de téléphone : 123-456-7892</p>
+          <p class="card-text">Adresse e-mail : reservations@hotel.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container main-container">
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <div class="card-header">Réservations en attente</div>
+        <div class="card-body p-1" >
+          <h2>2</h2>
+          <p>Réservations en attente</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <div class="card-header">Occupation</div>
+        <div class="card-body p-1" >
+          <h2>85%</h2>
+          <p>Taux d'occupation</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <div class="card-header">Nettoyage</div>
+        <div class="card-body p-1" >
+          <p>Consultez le planning de nettoyage des chambres.</p>
+          <a href="#" class="btn btn-primary">Voir le planning</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-header">Statistiques mensuelles</div>
+        <div class="card-body p-1" >
+          <p>Visualisez les statistiques mensuelles des réservations et des commandes.</p>
+          <a href="#" class="btn btn-primary">Voir les statistiques</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-header">Aide et support</div>
+        <div class="card-body p-1" >
+          <ul>
+            <li><a href="#">Contactez-nous</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+    
+      <footer>
+        <div class="container ">
+          <div class="row">
+            <div class="col-md-6 d-flex flex-row bd-highlight mb-3">
+              <h5>Nous suivre</h5>
+              <div class="social-media">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="col-md-6 ">
+              <h5>Nous contacter</h5>
+              <form class="p-1">
+                <div class="form-group m-1">
+                  <input type="email" class="form-control" placeholder="Votre adresse email">
+                </div>
+                <div class="form-group m-1">
+                  <textarea class="form-control" rows="3" placeholder="Votre message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="legal">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <p>&copy; 2023 e-Hôtels. Tous droits réservés.</p>
+              </div>
+              <div class="col-md-6 text-md-end">
+                <a href="#">Politique de confidentialité</a> | <a href="#">Conditions d'utilisation</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+      
+      
+</body>
+
+</html>

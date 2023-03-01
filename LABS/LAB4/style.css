@@ -1,0 +1,18 @@
+@font-face {
+  font-family: AustieBostKittenKlub;
+  src: url(AustieBostKittenKlub.ttf);
+  font-weight: bold;
+}
+
+
+*{
+}
+h1{
+  display: block;
+  margin: auto;
+  font-family: AustieBostKittenKlub;
+  color: floralwhite;
+  transition: all 6s cubic-bezier(0.565, 0.9, 0.44, 1);
+
+  text-shadow: black 0.05em 0.05em 0.1em
+}
