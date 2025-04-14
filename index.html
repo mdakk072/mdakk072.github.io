@@ -1,466 +1,547 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mounir Dakkak - Software Developer</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Roboto', Arial, sans-serif;
-      color: #333;
-      line-height: 1.6;
-      background-color: #f5f5f5;
-    }
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      background-color: #fff;
-      padding: 20px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    header {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-    }
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0;
-      color: #007bff;
-    }
-    h2 {
-      font-size: 1.5rem;
-      margin-top: 0;
-      color: #555;
-    }
-    .section-title {
-      font-size: 1.2rem;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      color: #007bff;
-    }
-    .contact-info a {
-      text-decoration: none;
-      color: #333;
-    }
-    .contact-info a:hover {
-      color: #007bff;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      padding: 2px 0;
-    }
-    /* Language container hide style */
-    .lang { display: none; }
-    .lang.active { display: block; }
-    /* RTL for Arabic */
-    [lang="ar"] {
-      direction: rtl;
-      text-align: right;
-    }
-    /* Language switcher styling */
-    #langSwitch {
-      margin-bottom: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mounir Dakkak - Software Designer</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* Custom styles for subtle enhancements */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f8fa;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        /* Hover effects for cards */
+        .card.shadow-sm {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card.shadow-sm:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        /* Button hover animation */
+        .btn-light, .btn-outline-light {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-light:hover, .btn-outline-light:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Animated list icons */
+        .list-icon {
+            transition: transform 0.2s ease;
+        }
+        
+        li:hover .list-icon {
+            transform: scale(1.2);
+        }
+        
+        /* Gradient header with animation */
+        .animated-header {
+            background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+            background-size: 200% 200%;
+            animation: gradientBG 10s ease infinite;
+        }
+        
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        /* Animated contact icons */
+        .contact-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+        }
+        
+        /* Section title underline animation */
+        .section-title {
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #0d6efd;
+            transition: width 0.5s ease;
+        }
+        
+        .section-title-container:hover .section-title::after {
+            width: 100%;
+        }
+        
+        /* Card hover links */
+        .institution-link {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .institution-link:hover {
+            color: #0d6efd;
+        }
+        
+        /* QR code animation */
+        .qr-container {
+            transition: transform 0.3s ease;
+        }
+        
+        .qr-container:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Social share buttons */
+        .social-share {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .social-share a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            margin: 0 5px;
+            border-radius: 50%;
+            background: #f8f9fa;
+            color: #0d6efd;
+            transition: all 0.3s ease;
+        }
+        
+        .social-share a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: #0d6efd;
+            color: white;
+        }
+        
+        /* Modal animation */
+        .modal.fade .modal-dialog {
+            transition: transform 0.3s ease-out;
+            transform: scale(0.9);
+        }
+        
+        .modal.show .modal-dialog {
+            transform: scale(1);
+        }
+    </style>
 </head>
-<body>
-  <div class="container">
-    <!-- Language Switcher -->
-    <div id="langSwitch" class="d-flex justify-content-end">
-      <select id="languageSelect" class="form-select form-select-sm" style="width: auto;">
-        <option value="en" selected>English</option>
-        <option value="fr">Français</option>
-        <option value="ar">العربية</option>
-      </select>
+<body class="bg-light">
+    <div class="container my-3 my-md-5">
+        <div class="card shadow border-0 rounded-3 overflow-hidden animate__animated animate__fadeIn">
+            <!-- Header Section -->
+            <div class="animated-header text-white p-4">
+                <div class="text-end mb-3">
+                    <a href="https://raw.githubusercontent.com/mdakk072/mdakk072.github.io/refs/heads/main/Mounir_Dakkak_Resume.pdf" class="btn btn-light me-2" download target="_blank">
+                        <i class="fas fa-download me-2"></i>Download PDF
+                    </a>
+                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#shareModal">
+                        <i class="fas fa-share-alt me-2"></i>Share
+                    </button>
+                </div>
+                <div class="text-center text-md-start">
+                    <h1 class="display-5 fw-bold mb-0 animate__animated animate__fadeInDown">Mounir Dakkak</h1>
+                    <h2 class="fs-3 fw-light mb-3 animate__animated animate__fadeInDown animate__delay-1s">Software Designer</h2>
+                    <p class="lead mb-0 animate__animated animate__fadeInDown animate__delay-2s">
+                        Expert in embedded systems, full-stack development, and data, with a keen interest in data collection and analysis, artificial intelligence, and cybersecurity.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Content Section -->
+            <div class="p-4">
+                <div class="row g-4">
+                    <!-- Left Column -->
+                    <div class="col-lg-4">
+                        <!-- Contact Information -->
+                        <div class="card mb-4 border-0 bg-light animate__animated animate__fadeInLeft">
+                            <div class="card-body">
+                                <div class="section-title-container">
+                                    <h3 class="border-bottom border-primary pb-2 mb-3 text-primary section-title">Contact</h3>
+                                </div>
+                                
+                                <div class="d-flex mb-3 contact-item">
+                                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 contact-icon" style="width: 40px; height: 40px;">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div>
+                                        <div>1175 R. de Courchevel</div>
+                                        <div>Saint-Romuald, Lévis, QC, G6W0T2</div>
+                                        <div>Canada</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex mb-3 contact-item">
+                                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 contact-icon" style="width: 40px; height: 40px;">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="d-flex align-items-center">+1 (613)-404-7105</div>
+                                </div>
+                                
+                                <div class="d-flex mb-3 contact-item">
+                                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 contact-icon" style="width: 40px; height: 40px;">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <a href="mailto:mounir.dakkak@gmail.com" class="text-decoration-none">mounir.dakkak@gmail.com</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex mb-3 contact-item">
+                                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 contact-icon" style="width: 40px; height: 40px;">
+                                        <i class="fab fa-linkedin"></i>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <a href="https://www.linkedin.com/in/mounir-dakkak-571844116/" target="_blank" class="text-decoration-none">LinkedIn Profile</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex contact-item">
+                                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 contact-icon" style="width: 40px; height: 40px;">
+                                        <i class="fab fa-github"></i>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <a href="https://github.com/mdakk072" target="_blank" class="text-decoration-none">GitHub Profile</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Languages -->
+                        <div class="card mb-4 border-0 bg-light animate__animated animate__fadeInLeft animate__delay-1s">
+                            <div class="card-body">
+                                <div class="section-title-container">
+                                    <h3 class="border-bottom border-primary pb-2 mb-3 text-primary section-title">Languages</h3>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="fw-bold">French</div>
+                                    <div class="text-secondary">Fluent</div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="fw-bold">English</div>
+                                    <div class="text-secondary">Intermediate</div>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">Arabic</div>
+                                    <div class="text-secondary">Native</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Education -->
+                        <div class="card border-0 bg-light animate__animated animate__fadeInLeft animate__delay-2s">
+                            <div class="card-body">
+                                <div class="section-title-container">
+                                    <h3 class="border-bottom border-primary pb-2 mb-3 text-primary section-title">Education</h3>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">Bachelor's Degree in Computer Engineering</div>
+                                    <div class="text-secondary">
+                                        <a href="https://www.uottawa.ca/fr" target="_blank" class="institution-link">
+                                            University of Ottawa
+                                        </a>, 2019-2023
+                                    </div>
+                                    <div class="text-secondary">Cumulative weighted average: 8.4/10</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column -->
+                    <div class="col-lg-8">
+                        <!-- Work Experience -->
+                        <div class="mb-5 animate__animated animate__fadeInRight">
+                            <div class="section-title-container">
+                                <h3 class="border-bottom border-primary pb-2 mb-4 text-primary section-title">Work Experience</h3>
+                            </div>
+                            
+                            <div class="card mb-4 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h4 class="fw-bold">Software Designer</h4>
+                                    <div class="text-primary mb-1">
+                                        <a href="https://luminator.com/fr/" target="_blank" class="institution-link">
+                                            Luminator Technology Group
+                                        </a>, Lévis, QC
+                                    </div>
+                                    <div class="text-secondary mb-3">10/2023 - Present</div>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-circle text-primary me-2 small list-icon"></i>Developed and maintained object-oriented C++ and C code for passenger information systems in embedded applications</li>
+                                        <li class="mb-2"><i class="fas fa-circle text-primary me-2 small list-icon"></i>Implemented messaging protocols/middleware for IPC and device communication (ZMQ, MQTT)</li>
+                                        <li class="mb-2"><i class="fas fa-circle text-primary me-2 small list-icon"></i>Developed a web-based Maintenance Service Tool using PHP, JavaScript, Bootstrap, and JSON</li>
+                                        <li class="mb-2"><i class="fas fa-circle text-primary me-2 small list-icon"></i>Acted as Git Maintainer for the project's shared processes and libraries</li>
+                                        <li class="mb-2"><i class="fas fa-circle text-primary me-2 small list-icon"></i>Engineered embedded Linux solutions using Yocto, including custom Bitbake recipe development</li>
+                                        <li class="mb-2"><i class="fas fa-circle text-primary me-2 small list-icon"></i>Participated in architecture design for passenger information systems</li>
+                                        <li class="mb-2"><i class="fas fa-circle text-primary me-2 small list-icon"></i>Worked with network protocols (TCP/UDP, SNMP, TRDP) and analysis tools (Wireshark, tcpdump, tcpreplay)</li>
+                                        <li class="mb-2"><i class="fas fa-circle text-primary me-2 small list-icon"></i>Fixed memory leaks using Valgrind</li>
+                                        <li class="mb-2"><i class="fas fa-circle text-primary me-2 small list-icon"></i>Implemented hardware control interfaces for audio codecs and LED control systems</li>
+                                        <li><i class="fas fa-circle text-primary me-2 small list-icon"></i>Provided on-site support for customers</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="card border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h4 class="fw-bold">Software Automation Test Engineer (Co-op Student)</h4>
+                                    <div class="text-primary mb-1">
+                                        <a href="https://www.lumentum.com/en" target="_blank" class="institution-link">
+                                            Lumentum
+                                        </a>, Ottawa, ON
+                                    </div>
+                                    <div class="text-secondary mb-3">01/2022 - 04/2022</div>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-circle text-primary me-2 small list-icon"></i>Authored and debugged optical device test scripts using Python (PyVisa) and VB.NET</li>
+                                        <li class="mb-2"><i class="fas fa-circle text-primary me-2 small list-icon"></i>Streamlined test automation, increasing efficiency and accuracy</li>
+                                        <li class="mb-2"><i class="fas fa-circle text-primary me-2 small list-icon"></i>Managed tasks and tracked project progress using Jira</li>
+                                        <li class="mb-2"><i class="fas fa-circle text-primary me-2 small list-icon"></i>Analyzed and visualized data using Python (Pandas, Matplotlib, Seaborn)</li>
+                                        <li><i class="fas fa-circle text-primary me-2 small list-icon"></i>Created reports, presentations, and documentation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Projects -->
+                        <div class="mb-5 animate__animated animate__fadeInRight animate__delay-1s">
+                            <div class="section-title-container">
+                                <h3 class="border-bottom border-primary pb-2 mb-4 text-primary section-title">Projects</h3>
+                            </div>
+                            
+                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                <div class="col">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">Web Scraping Solution</h5>
+                                            <div class="mb-2">
+                                                <a href="https://www.youtube.com/watch?v=K0BKKSwX1gs" target="_blank" class="text-decoration-none">
+                                                    <i class="fab fa-youtube text-danger"></i> Video Presentation
+                                                </a>
+                                            </div>
+                                            <p class="card-text">
+                                                Comprehensive real estate data scraping solution with scheduling module and control UI. Data stored in MongoDB.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">Parking Space Detection</h5>
+                                            <div class="mb-2">
+                                                <a href="https://github.com/mdakk072/deep3ssas" target="_blank" class="text-decoration-none">
+                                                    <i class="fab fa-github"></i> GitHub Repository
+                                                </a>
+                                            </div>
+                                            <p class="card-text">
+                                                YOLOv5-based real-time parking space detection model using Python and OpenCV.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">CI/CD and DevOps Project</h5>
+                                            <div class="mb-2">
+                                                <a href="https://github.com/mdakk072/deep3ssas" target="_blank" class="text-decoration-none">
+                                                    <i class="fab fa-github"></i> GitHub Repository
+                                                </a>
+                                            </div>
+                                            <p class="card-text">
+                                                Integrated CI/CD practices with Docker containerization. Flask website and API connected to PostgreSQL.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">Hotel Reservation System</h5>
+                                            <div class="mb-2">
+                                                <a href="https://youtu.be/akXKoQd52V4?si=8J92ps-pbtcdFEbS" target="_blank" class="text-decoration-none">
+                                                    <i class="fab fa-youtube text-danger"></i> Video Presentation
+                                                </a>
+                                            </div>
+                                            <p class="card-text">
+                                                Comprehensive hotel management website using Vue.js, Node.js, and MySQL with authentication.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">16-bit CPU Implementation</h5>
+                                            <p class="card-text">
+                                                MIPS-based 16-bit CPU designed with VHDL. Implemented on Altera DE2-115 FPGA board.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">Chip8 Emulator</h5>
+                                            <p class="card-text">
+                                                Personal project coding a Chip8 emulator using Python.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Skills -->
+                        <div class="mb-4 animate__animated animate__fadeInRight animate__delay-2s">
+                            <div class="section-title-container">
+                                <h3 class="border-bottom border-primary pb-2 mb-4 text-primary section-title">Skills</h3>
+                            </div>
+                            
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="card mb-3 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">Programming & Development</h5>
+                                            <ul class="list-unstyled mb-0">
+                                                <li class="mb-2"><i class="fas fa-check text-success me-2 list-icon"></i>Languages: C++, C, Python, PHP, Java, VB.NET</li>
+                                                <li class="mb-2"><i class="fas fa-check text-success me-2 list-icon"></i>Web Technologies: JavaScript, HTML, CSS, Bootstrap 3/5, React, Vue.js, Flask</li>
+                                                <li class="mb-0"><i class="fas fa-check text-success me-2 list-icon"></i>Databases: MySQL, PostgreSQL, SQLite, MongoDB</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">Embedded Systems & Hardware</h5>
+                                            <ul class="list-unstyled mb-0">
+                                                <li class="mb-2"><i class="fas fa-check text-success me-2 list-icon"></i>Embedded Linux: Yocto, Bitbake</li>
+                                                <li class="mb-0"><i class="fas fa-check text-success me-2 list-icon"></i>Hardware: Microcontrollers, VHDL, Motorola HCS12, Arduino, BeagleBone, Raspberry Pi, i.MX6</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="card mb-3 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">Networking & Protocols</h5>
+                                            <ul class="list-unstyled mb-0">
+                                                <li class="mb-2"><i class="fas fa-check text-success me-2 list-icon"></i>Network Analysis: Wireshark, tcpdump, tcpreplay</li>
+                                                <li class="mb-2"><i class="fas fa-check text-success me-2 list-icon"></i>Protocols: TCP/UDP, NTP, SNMP, TRDP</li>
+                                                <li class="mb-2"><i class="fas fa-check text-success me-2 list-icon"></i>System Access: SSH, SFTP</li>
+                                                <li class="mb-0"><i class="fas fa-check text-success me-2 list-icon"></i>IPC: ZMQ, MQTT</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card mb-3 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">DevOps & Tools</h5>
+                                            <ul class="list-unstyled mb-0">
+                                                <li class="mb-2"><i class="fas fa-check text-success me-2 list-icon"></i>Version Control: Git, GitHub Actions, GitLab</li>
+                                                <li class="mb-2"><i class="fas fa-check text-success me-2 list-icon"></i>Containerization: Docker</li>
+                                                <li class="mb-0"><i class="fas fa-check text-success me-2 list-icon"></i>CI/CD: YAML, pytest, Azure</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">ML & Computer Vision</h5>
+                                            <ul class="list-unstyled mb-0">
+                                                <li class="mb-2"><i class="fas fa-check text-success me-2 list-icon"></i>Data & Visualization: Pandas, Matplotlib, Seaborn</li>
+                                                <li class="mb-2"><i class="fas fa-check text-success me-2 list-icon"></i>Libraries: scikit-learn, PyTorch, PIL, OpenCV</li>
+                                                <li class="mb-0"><i class="fas fa-check text-success me-2 list-icon"></i>Frameworks: scikit-image, YOLOv5</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Additional Information -->
+                        <div class="card bg-light border-0 animate__animated animate__fadeInUp">
+                            <div class="card-body">
+                                <div class="section-title-container">
+                                    <h3 class="border-bottom border-primary pb-2 mb-3 text-primary section-title">Additional Information</h3>
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-star text-warning me-2 list-icon"></i>Experience diagnosing and fixing memory leaks using gdb, nmon and Valgrind</li>
+                                    <li class="mb-2"><i class="fas fa-star text-warning me-2 list-icon"></i>Effective problem-solving skills with a strong aptitude for learning new technologies</li>
+                                    <li class="mb-2"><i class="fas fa-star text-warning me-2 list-icon"></i>Excellent communication skills with the ability to work in diverse teams</li>
+                                    <li class="mb-0"><i class="fas fa-star text-warning me-2 list-icon"></i>Strong work ethic and dedication to achieving project goals and deadlines</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
-    <header class="text-center">
-      <!-- Content for each language -->
-      <div class="lang" data-lang="en">
-        <h1>Mounir Dakkak</h1>
-        <h2>Software Developer</h2>
-      </div>
-      <div class="lang" data-lang="fr">
-        <h1>Mounir Dakkak</h1>
-        <h2>Développeur Logiciel</h2>
-      </div>
-      <div class="lang" data-lang="ar">
-        <h1>مونير دكّاك</h1>
-        <h2>مطور برمجيات</h2>
-      </div>
-    </header>
-    
-    <div class="row">
-      <div class="col-md-4">
-        <!-- Contact Information -->
-        <section>
-          <h3 class="section-title" data-lang="en">Contact</h3>
-          <h3 class="section-title" data-lang="fr">Contact</h3>
-          <h3 class="section-title" data-lang="ar">الاتصال</h3>
-          <div class="lang" data-lang="en">
-            <p>1175 R. de Courchevel, Saint-Romuald, Lévis, QC, Canada</p>
-            <p>+1 613-404-7105</p>
-            <p><a href="mailto:mounir.dakkak@gmail.com">mounir.dakkak@gmail.com</a></p>
-            <p class="contact-info">
-              <a href="https://www.linkedin.com/in/mounir-dakkak-571844116/" target="_blank">LinkedIn</a> | 
-              <a href="https://github.com/mdakk072" target="_blank">GitHub</a>
-            </p>
+    <!-- QR Code Share Modal -->
+    <div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content animate__animated animate__zoomIn animate__faster">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="shareModalLabel">
+                        <i class="fas fa-share-alt me-2"></i>Share My Portfolio
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center p-4">
+                    <p class="mb-3">Scan this QR code to visit my portfolio website:</p>
+                    <div class="qr-container mx-auto mb-3">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://mdakk072.github.io/" alt="QR Code for Portfolio" class="img-fluid rounded shadow" width="200">
+                    </div>
+                    <div class="text-muted mb-3">https://mdakk072.github.io/</div>
+
+                      
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                  </div>
+              </div>
           </div>
-          <div class="lang" data-lang="fr">
-            <p>1175 R. de Courchevel, Saint-Romuald, Lévis, QC, Canada</p>
-            <p>+1 613-404-7105</p>
-            <p><a href="mailto:mounir.dakkak@gmail.com">mounir.dakkak@gmail.com</a></p>
-            <p class="contact-info">
-              <a href="https://www.linkedin.com/in/mounir-dakkak-571844116/" target="_blank">LinkedIn</a> | 
-              <a href="https://github.com/mdakk072" target="_blank">GitHub</a>
-            </p>
-          </div>
-          <div class="lang" data-lang="ar">
-            <p>1175 شارع كورشيفيل، سان روموالد، ليفيس، كيبيك، كندا</p>
-            <p>+1 613-404-7105</p>
-            <p><a href="mailto:mounir.dakkak@gmail.com">mounir.dakkak@gmail.com</a></p>
-            <p class="contact-info">
-              <a href="https://www.linkedin.com/in/mounir-dakkak-571844116/" target="_blank">لينكدإن</a> | 
-              <a href="https://github.com/mdakk072" target="_blank">GitHub</a>
-            </p>
-          </div>
-        </section>
-        
-        <!-- Languages Offered -->
-        <section>
-          <h3 class="section-title" data-lang="en">Languages</h3>
-          <h3 class="section-title" data-lang="fr">Langues</h3>
-          <h3 class="section-title" data-lang="ar">اللغات</h3>
-          <div class="lang" data-lang="en">
-            <p>French | English | Arabic | Spanish</p>
-          </div>
-          <div class="lang" data-lang="fr">
-            <p>Français | Anglais | Arabe | Espagnol</p>
-          </div>
-          <div class="lang" data-lang="ar">
-            <p>الفرنسية | الإنجليزية | العربية | الإسبانية</p>
-          </div>
-        </section>
-        
-        <!-- Education -->
-        <section>
-          <h3 class="section-title" data-lang="en">Education</h3>
-          <h3 class="section-title" data-lang="fr">Formation</h3>
-          <h3 class="section-title" data-lang="ar">التعليم</h3>
-          <div class="lang" data-lang="en">
-            <h5>Bachelor's Degree in Computer Engineering</h5>
-            <p>University of Ottawa, 2019-2023</p>
-            <p>Average: 8.4/10</p>
-          </div>
-          <div class="lang" data-lang="fr">
-            <h5>Licence en Génie Informatique</h5>
-            <p>Université d'Ottawa, 2019-2023</p>
-            <p>Moyenne : 8.4/10</p>
-          </div>
-          <div class="lang" data-lang="ar">
-            <h5>بكالوريوس في هندسة الحاسوب</h5>
-            <p>جامعة أوتاوا، 2019-2023</p>
-            <p>المعدل: 8.4/10</p>
-          </div>
-        </section>
       </div>
       
-      <div class="col-md-8">
-        <!-- Work Experience -->
-        <section>
-          <h3 class="section-title" data-lang="en">Work Experience</h3>
-          <h3 class="section-title" data-lang="fr">Expérience Professionnelle</h3>
-          <h3 class="section-title" data-lang="ar">الخبرة العملية</h3>
-          
-          <!-- Software Designer -->
-          <div class="mb-3 lang" data-lang="en">
-            <h5>Software Designer, Luminator Technology Group, Lévis, QC (10/2023 - Present)</h5>
-            <ul>
-              <li>Developed and maintained object-oriented C++ and C code for passenger information systems in embedded applications.</li>
-              <li>Implemented messaging protocols/middleware for IPC and device communication (<strong>ZMQ, MQTT</strong>).</li>
-              <li>Developed a web-based Maintenance Service Tool using <strong>PHP, JavaScript, Bootstrap</strong> and JSON.</li>
-              <li><strong>Git Maintainer:</strong> Managed quality code reviews, merge requests, and system integration.</li>
-              <li>Engineered embedded Linux solutions using <strong>Yocto</strong> and Bitbake for an 8-person team project.</li>
-              <li>Worked with network protocols (TCP/UDP, SNMP, TRDP) and tools like <strong>Wireshark, tcpdump, tcpreplay</strong>.</li>
-              <li>Authored Python scripts for system updates and automated testing; fixed memory leaks using <strong>Valgrind</strong>.</li>
-              <li>Provided on-site support for customer maintenance and integration.</li>
-            </ul>
-          </div>
-          
-          <div class="mb-3 lang" data-lang="fr">
-            <h5>Software Designer, Luminator Technology Group, Lévis, QC (10/2023 - Présent)</h5>
-            <ul>
-              <li>Développé et maintenu du code orienté objet en C++ et C pour des systèmes d'information passagers embarqués.</li>
-              <li>Implémenté des protocoles/middleware de messagerie pour l’IPC et la communication (ZMQ, MQTT).</li>
-              <li>Conçu un outil web de maintenance pour le monitoring, l'exécution de commandes et la gestion de logs en utilisant PHP, JavaScript, Bootstrap et JSON.</li>
-              <li><strong>Responsable Git :</strong> Gestion des revues de code, demandes de fusion et intégration système.</li>
-              <li>Conçu des solutions Linux embarquées avec Yocto et Bitbake pour un projet d'équipe de 8 personnes.</li>
-              <li>Travaillé avec divers protocoles (TCP/UDP, SNMP, TRDP) et outils comme Wireshark, tcpdump et tcpreplay.</li>
-              <li>Écrit des scripts Python pour des mises à jour systèmes et des tests automatisés ; corrigé les fuites de mémoire avec Valgrind.</li>
-              <li>Assuré un support sur site pour la maintenance et l’intégration chez les clients.</li>
-            </ul>
-          </div>
-          
-          <div class="mb-3 lang" data-lang="ar">
-            <h5>مصمم برمجيات، مجموعة Luminator Technology، ليفيس، كيبيك (10/2023 - حتى الآن)</h5>
-            <ul>
-              <li>تطوير وصيانة كود C++ وC الموجه للكائنات لأنظمة المعلومات الخاصة بالركاب المدمجة.</li>
-              <li>تنفيذ بروتوكولات/وسيطات المراسلة للتواصل بين العمليات (ZMQ، MQTT).</li>
-              <li>تطوير أداة صيانة على الويب باستخدام PHP، JavaScript، Bootstrap وJSON للمراقبة وتنفيذ الأوامر وإدارة السجلات.</li>
-              <li><strong>مدير Git:</strong> إدارة مراجعات الكود وطلبات الدمج والتكامل النظامي.</li>
-              <li>تصميم حلول Linux المدمجة باستخدام Yocto وBitbake لمشروع فريق مكون من 8 أشخاص.</li>
-              <li>العمل مع بروتوكولات الشبكة (TCP/UDP, SNMP, TRDP) واستخدام أدوات مثل Wireshark, tcpdump, tcpreplay.</li>
-              <li>كتابة سكربتات Python لتحديث النظام واختبار الأتمتة؛ إصلاح تسربات الذاكرة باستخدام Valgrind.</li>
-              <li>تقديم دعم ميداني لصيانة العملاء وعمليات التكامل.</li>
-            </ul>
-          </div>
-          
-          <!-- Software Automation Test Engineer -->
-          <div class="mb-3 lang" data-lang="en">
-            <h5>Software Automation Test Engineer (Co-op Student), Lumentum, Ottawa, ON (01/2022 - 04/2022)</h5>
-            <ul>
-              <li>Authored and debugged optical device test scripts using <strong>Python (PyVisa)</strong> and <strong>VB.NET</strong>.</li>
-              <li>Streamlined test automation, increasing efficiency and accuracy.</li>
-              <li>Used <strong>Jira</strong> for task management and project tracking.</li>
-              <li>Analyzed and visualized data using <strong>Pandas, Matplotlib, and Seaborn</strong>.</li>
-              <li>Prepared comprehensive reports, presentations, and documentation.</li>
-            </ul>
-          </div>
-          
-          <div class="mb-3 lang" data-lang="fr">
-            <h5>Ingénieur Test Automatisation (Stage coop), Lumentum, Ottawa, ON (01/2022 - 04/2022)</h5>
-            <ul>
-              <li>Rédigé et débogué des scripts de test pour des dispositifs optiques utilisant Python (PyVisa) et VB.NET.</li>
-              <li>Optimisé l'automatisation des tests pour une efficacité accrue.</li>
-              <li>Utilisé Jira pour la gestion des tâches et le suivi des projets.</li>
-              <li>Analysé et visualisé des données avec Pandas, Matplotlib et Seaborn.</li>
-              <li>Préparé des rapports détaillés, présentations et documentations.</li>
-            </ul>
-          </div>
-          
-          <div class="mb-3 lang" data-lang="ar">
-            <h5>مهندس اختبار الأتمتة (طالب تعاوني)، Lumentum، أوتاوا، ON (01/2022 - 04/2022)</h5>
-            <ul>
-              <li>كتابة وتصحيح سكربتات اختبار للأجهزة البصرية باستخدام Python (PyVisa) وVB.NET.</li>
-              <li>تحسين أتمتة الاختبارات لزيادة الكفاءة والدقة.</li>
-              <li>استخدام Jira لإدارة المهام وتتبع المشاريع.</li>
-              <li>تحليل وعرض البيانات باستخدام Pandas، Matplotlib وSeaborn.</li>
-              <li>إعداد تقارير شاملة، عروض تقديمية ووثائق.</li>
-            </ul>
-          </div>
-        </section>
-        
-        <!-- Skills -->
-        <section>
-          <h3 class="section-title" data-lang="en">Skills</h3>
-          <h3 class="section-title" data-lang="fr">Compétences</h3>
-          <h3 class="section-title" data-lang="ar">المهارات</h3>
-          <div class="lang" data-lang="en">
-            <h5>Programming & Development</h5>
-            <ul>
-              <li>Languages: C++, C, Python, PHP, Java, VB.NET</li>
-              <li>Web Technologies: JavaScript, HTML, CSS, Bootstrap, React, Vue.js, Flask</li>
-              <li>Databases: MySQL, PostgreSQL, SQLite, MongoDB</li>
-            </ul>
-            <h5>Embedded Systems & Hardware</h5>
-            <ul>
-              <li>Embedded Linux: Yocto, Bitbake</li>
-              <li>Hardware: Microcontrollers, sensors, peripherals, VHDL, Motorola HCS12, Arduino, BeagleBone, Raspberry Pi, i.MX6</li>
-            </ul>
-            <h5>Networking & Protocols</h5>
-            <ul>
-              <li>Network Analysis: Wireshark, tcpdump, tcpreplay</li>
-              <li>System Access: SSH, SFTP</li>
-              <li>IPC: ZMQ, MQTT</li>
-            </ul>
-            <h5>DevOps & Tools</h5>
-            <ul>
-              <li>Version Control: Git, GitHub Actions, GitLab</li>
-              <li>Containerization: Docker</li>
-              <li>CI/CD: YAML, pytest, Azure</li>
-            </ul>
-            <h5>Machine Learning, Data & Computer Vision</h5>
-            <ul>
-              <li>Data & Visualization: Pandas, Matplotlib, Seaborn</li>
-              <li>Libraries: scikit-learn, PyTorch, PIL, OpenCV</li>
-              <li>Frameworks: scikit-image, YOLOv5</li>
-            </ul>
-            <h5>Additional</h5>
-            <ul>
-              <li>Debugging tools: gdb, nmon, Valgrind</li>
-              <li>Interests: Data collection, AI, Cybersecurity</li>
-            </ul>
-          </div>
-          <div class="lang" data-lang="fr">
-            <h5>Programmation & Développement</h5>
-            <ul>
-              <li>Langages : C++, C, Python, PHP, Java, VB.NET</li>
-              <li>Technologies Web : JavaScript, HTML, CSS, Bootstrap, React, Vue.js, Flask</li>
-              <li>Bases de données : MySQL, PostgreSQL, SQLite, MongoDB</li>
-            </ul>
-            <h5>Systèmes Embarqués & Matériel</h5>
-            <ul>
-              <li>Linux embarqué : Yocto, Bitbake</li>
-              <li>Matériel : Microcontrôleurs, capteurs, périphériques, VHDL, Motorola HCS12, Arduino, BeagleBone, Raspberry Pi, i.MX6</li>
-            </ul>
-            <h5>Réseautage & Protocoles</h5>
-            <ul>
-              <li>Analyse réseau : Wireshark, tcpdump, tcpreplay</li>
-              <li>Accès système : SSH, SFTP</li>
-              <li>IPC : ZMQ, MQTT</li>
-            </ul>
-            <h5>DevOps & Outils</h5>
-            <ul>
-              <li>Contrôle de version : Git, GitHub Actions, GitLab</li>
-              <li>Containerisation : Docker</li>
-              <li>CI/CD : YAML, pytest, Azure</li>
-            </ul>
-            <h5>Machine Learning, Données & Vision par Ordinateur</h5>
-            <ul>
-              <li>Données & Visualisation : Pandas, Matplotlib, Seaborn</li>
-              <li>Bibliothèques : scikit-learn, PyTorch, PIL, OpenCV</li>
-              <li>Frameworks : scikit-image, YOLOv5</li>
-            </ul>
-            <h5>Complémentaires</h5>
-            <ul>
-              <li>Outils de débogage : gdb, nmon, Valgrind</li>
-              <li>Centres d'intérêt : collecte de données, IA, cybersécurité</li>
-            </ul>
-          </div>
-          <div class="lang" data-lang="ar">
-            <h5>البرمجة والتطوير</h5>
-            <ul>
-              <li>اللغات: C++، C، Python، PHP، Java، VB.NET</li>
-              <li>تقنيات الويب: JavaScript، HTML، CSS، Bootstrap، React، Vue.js، Flask</li>
-              <li>قواعد البيانات: MySQL، PostgreSQL، SQLite، MongoDB</li>
-            </ul>
-            <h5>الأنظمة المدمجة والأجهزة</h5>
-            <ul>
-              <li>لينكس المدمج: Yocto، Bitbake</li>
-              <li>الأجهزة: المتحكمات الدقيقة، المستشعرات، الملحقات، VHDL، Motorola HCS12، Arduino، BeagleBone، Raspberry Pi، i.MX6</li>
-            </ul>
-            <h5>الشبكات والبروتوكولات</h5>
-            <ul>
-              <li>تحليل الشبكة: Wireshark، tcpdump، tcpreplay</li>
-              <li>الوصول للنظام: SSH، SFTP</li>
-              <li>الاتصال بين العمليات: ZMQ، MQTT</li>
-            </ul>
-            <h5>DevOps والأدوات</h5>
-            <ul>
-              <li>أنظمة التحكم في الإصدارات: Git، GitHub Actions، GitLab</li>
-              <li>التعبئة بالحاويات: Docker</li>
-              <li>CI/CD: YAML، pytest، Azure</li>
-            </ul>
-            <h5>تعلم الآلة، البيانات والرؤية الحاسوبية</h5>
-            <ul>
-              <li>البيانات والتصوير: Pandas، Matplotlib، Seaborn</li>
-              <li>المكتبات: scikit-learn، PyTorch، PIL، OpenCV</li>
-              <li>الأطر: scikit-image، YOLOv5</li>
-            </ul>
-            <h5>مهارات إضافية</h5>
-            <ul>
-              <li>أدوات تصحيح الأخطاء: gdb، nmon، Valgrind</li>
-              <li>الاهتمامات: جمع وتحليل البيانات، الذكاء الاصطناعي، الأمن السيبراني</li>
-            </ul>
-          </div>
-        </section>
-        
-        <!-- Projects -->
-        <section>
-          <h3 class="section-title" data-lang="en">Projects</h3>
-          <h3 class="section-title" data-lang="fr">Projets</h3>
-          <h3 class="section-title" data-lang="ar">المشاريع</h3>
-          <div class="lang" data-lang="en">
-            <ul>
-              <li><strong>Complete Web Scraping Solution for Real Estate Data</strong> – A comprehensive system with scraping, scheduling, and UI for data in MongoDB. (<a href="https://www.youtube.com/watch?v=K0BKKSwX1gs" target="_blank">Video Presentation</a>)</li>
-              <li><strong>Smart Parking Space Detection System</strong> – YOLOv5 based real-time detection model using Python & OpenCV. (<a href="https://github.com/mdakk072/deep3ssas" target="_blank">GitHub Repository</a>)</li>
-              <li><strong>CI/CD and DevOps Project</strong> – Automated testing and Docker containerization with Flask API and PostgreSQL. (<a href="https://github.com/mdakk072/deep3ssas" target="_blank">GitHub Repository</a>)</li>
-              <li><strong>Database-driven Hotel Reservation System</strong> – A full hotel management website using Vue.js, Node.js, and MySQL. (<a href="https://youtu.be/akXKoQd52V4?si=8J92ps-pbtcdFEbS" target="_blank">Video Presentation</a>)</li>
-              <li><strong>16-bit CPU Implementation Based on MIPS</strong> – Designed using VHDL and implemented on an Altera DE2-115 FPGA board with Quartus II.</li>
-            </ul>
-          </div>
-          <div class="lang" data-lang="fr">
-            <ul>
-              <li><strong>Solution Complète de Web Scraping pour Données Immobilières</strong> – Système complet comprenant modules de scraping, planification et interface de contrôle, stockage dans MongoDB. (<a href="https://www.youtube.com/watch?v=K0BKKSwX1gs" target="_blank">Présentation Vidéo</a>)</li>
-              <li><strong>Système Intelligent de Détection des Places de Parking</strong> – Modèle de détection en temps réel basé sur YOLOv5 utilisant Python & OpenCV. (<a href="https://github.com/mdakk072/deep3ssas" target="_blank">Repository GitHub</a>)</li>
-              <li><strong>Projet CI/CD et DevOps</strong> – Intégration d’une chaîne d’automatisation de tests et containerisation Docker avec API Flask et base PostgreSQL. (<a href="https://github.com/mdakk072/deep3ssas" target="_blank">Repository GitHub</a>)</li>
-              <li><strong>Système de Réservation d'Hôtel Basé sur une Base de Données</strong> – Site de gestion hôtelière complet utilisant Vue.js, Node.js et MySQL. (<a href="https://youtu.be/akXKoQd52V4?si=8J92ps-pbtcdFEbS" target="_blank">Présentation Vidéo</a>)</li>
-              <li><strong>Mise en œuvre d'un CPU 16-bit Basé sur MIPS</strong> – Conception avec VHDL et implémentation sur une carte FPGA Altera DE2-115 avec Quartus II.</li>
-            </ul>
-          </div>
-          <div class="lang" data-lang="ar">
-            <ul>
-              <li><strong>حل متكامل لجمع بيانات العقارات عبر الويب</strong> – نظام شامل يتضمن وحدة جمع البيانات، وحدة جدولة، وواجهة مراقبة مع تخزين البيانات في MongoDB. (<a href="https://www.youtube.com/watch?v=K0BKKSwX1gs" target="_blank">عرض فيديو</a>)</li>
-              <li><strong>نظام ذكي لرصد أماكن الانتظار</strong> – نموذج للكشف في الوقت الحقيقي يعتمد على YOLOv5 باستخدام Python و OpenCV. (<a href="https://github.com/mdakk072/deep3ssas" target="_blank">مستودع GitHub</a>)</li>
-              <li><strong>مشروع CI/CD و DevOps</strong> – ممارسات الأتمتة واستخدام Docker مع موقع Flask API وقاعدة بيانات PostgreSQL. (<a href="https://github.com/mdakk072/deep3ssas" target="_blank">مستودع GitHub</a>)</li>
-              <li><strong>نظام حجز فنادق معتمد على قاعدة بيانات</strong> – موقع متكامل لإدارة الفنادق باستخدام Vue.js و Node.js و MySQL. (<a href="https://youtu.be/akXKoQd52V4?si=8J92ps-pbtcdFEbS" target="_blank">عرض فيديو</a>)</li>
-              <li><strong>تنفيذ وحدة معالجة 16 بت مبنية على MIPS</strong> – تصميم باستخدام VHDL وتنفيذها على لوحة FPGA من نوع Altera DE2-115 باستخدام Quartus II.</li>
-            </ul>
-          </div>
-        </section>
-        
-        <!-- Additional Information -->
-        <section>
-          <h3 class="section-title" data-lang="en">Additional Information</h3>
-          <h3 class="section-title" data-lang="fr">Informations Complémentaires</h3>
-          <h3 class="section-title" data-lang="ar">معلومات إضافية</h3>
-          <div class="lang" data-lang="en">
-            <ul>
-              <li>Effective problem-solving skills and a strong aptitude for learning new technologies.</li>
-              <li>Excellent communication skills and ability to work in diverse teams.</li>
-              <li>Strong work ethic and dedication to achieving project goals and deadlines.</li>
-            </ul>
-          </div>
-          <div class="lang" data-lang="fr">
-            <ul>
-              <li>Capacité à résoudre efficacement les problèmes et à assimiler rapidement de nouvelles technologies.</li>
-              <li>Excellentes compétences en communication et aptitude à collaborer au sein d'équipes diverses.</li>
-              <li>Solide éthique professionnelle et détermination à atteindre les objectifs et respecter les délais.</li>
-            </ul>
-          </div>
-          <div class="lang" data-lang="ar">
-            <ul>
-              <li>مهارات فعالة في حل المشكلات واستيعاب التقنيات الجديدة بسرعة.</li>
-              <li>مهارات تواصل ممتازة وقدرة على العمل ضمن فرق متنوعة.</li>
-              <li>أخلاقيات عمل قوية والتزام بتحقيق أهداف المشاريع والالتزام بالمواعيد النهائية.</li>
-            </ul>
-          </div>
-        </section>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bootstrap JS and optional dependencies -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Simple language switching logic
-    const langSelect = document.getElementById('languageSelect');
-    const langElements = document.querySelectorAll('.lang');
-
-    function switchLanguage(lang) {
-      langElements.forEach(el => {
-        if (el.getAttribute('data-lang') === lang) {
-          el.classList.add('active');
-        } else {
-          el.classList.remove('active');
-        }
-      });
-    }
-
-    // Set default language (English)
-    switchLanguage('en');
-
-    langSelect.addEventListener('change', (e) => {
-      const selectedLang = e.target.value;
-      switchLanguage(selectedLang);
-    });
-  </script>
-</body>
-</html>
+      <!-- Bootstrap 5.3 JS and Popper.js -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+  </html>
