@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ememay</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=IBM+Plex+Sans:wght@300;600;700&family=Orbitron:wght@400;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 100vw; height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+    background: #000033;
+    overflow: hidden;
+    cursor: default;
+    user-select: none;
+  }
+
+  /* === CRT SCANLINES === */
+  .scanlines {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(
+      0deg, rgba(0,0,0,0.06) 0px, rgba(0,0,0,0.06) 1px, transparent 1px, transparent 3px
+    );
+    pointer-events: none; z-index: 100;
+    opacity: 0.7;
+  }
+
+  /* === BACKGROUND === */
+  .bg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 0;
+    background: radial-gradient(ellipse at 50% 40%, #000066 0%, #000022 60%, #000011 100%);
+    transition: all 1.5s ease;
+  }
+  .bg.phase-mmi {
+    background: radial-gradient(ellipse at 50% 40%, #002200 0%, #001100 60%, #000808 100%);
+  }
+  .bg.phase-ememay {
+    background: radial-gradient(ellipse at 50% 40%, #1a0033 0%, #0d001a 50%, #050510 100%);
+  }
+
+  /* === STARS === */
+  .stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+  .star {
+    position: absolute;
+    width: 2px; height: 2px;
+    background: #ffffff;
+    animation: twinkle 2s ease-in-out infinite alternate;
+  }
+  @keyframes twinkle { 0% { opacity: 0.15; } 100% { opacity: 0.7; } }
+
+  /* === MAIN STAGE === */
+  .stage {
+    position: relative; z-index: 10;
+    display: flex; flex-direction: column; align-items: center; gap: 50px;
+  }
+
+  /* === LOGO AREA === */
+  .logo-area {
+    position: relative;
+    width: 500px; height: 160px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* === HMI === */
+  .hmi {
+    position: absolute;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 88px;
+    color: #4444ff;
+    text-shadow: 0 0 20px rgba(68,68,255,0.6), 0 0 60px rgba(68,68,255,0.3), 4px 4px 0 #000022;
+    opacity: 0;
+    letter-spacing: 12px;
+  }
+  .hmi.spawn {
+    animation: hmiIn 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  @keyframes hmiIn {
+    0% { opacity: 0; transform: scale(0.1); filter: brightness(5) blur(20px); }
+    30% { opacity: 1; filter: brightness(2) blur(2px); }
+    60% { transform: scale(1.08); filter: brightness(1.2) blur(0); }
+    80% { transform: scale(0.97); }
+    100% { opacity: 1; transform: scale(1); filter: brightness(1) blur(0); }
+  }
+  .hmi.idle {
+    opacity: 1;
+    animation: hmiPulse 2s ease-in-out infinite;
+  }
+  @keyframes hmiPulse {
+    0%, 100% { text-shadow: 0 0 20px rgba(68,68,255,0.6), 0 0 60px rgba(68,68,255,0.3), 4px 4px 0 #000022; }
+    50% { text-shadow: 0 0 30px rgba(68,68,255,0.8), 0 0 80px rgba(68,68,255,0.4), 4px 4px 0 #000022; }
+  }
+  .hmi.glitch {
+    animation: hmiGlitch 0.6s steps(2) forwards !important;
+  }
+  @keyframes hmiGlitch {
+    0% { transform: translate(0); color: #4444ff; opacity: 1; }
+    10% { transform: translate(-4px, 2px) skewX(-2deg); color: #ff0044; }
+    20% { transform: translate(3px, -1px) skewX(3deg); color: #4444ff; }
+    30% { transform: translate(-2px, 3px); color: #ff0044; clip-path: inset(20% 0 30% 0); }
+    40% { transform: translate(4px, -2px); color: #4444ff; clip-path: inset(50% 0 10% 0); }
+    50% { transform: translate(0) skewX(-5deg); color: #ff0044; clip-path: none; }
+    60% { transform: translate(-6px, 1px); color: #ff0000; opacity: 0.8; }
+    80% { transform: translate(2px) scale(0.95); opacity: 0.4; filter: blur(3px); }
+    100% { transform: scale(0.8) translateY(10px); opacity: 0; filter: blur(8px); color: #ff0000; }
+  }
+
+  /* === SHATTER === */
+  .shatter-container { position: absolute; width: 100%; height: 100%; pointer-events: none; }
+  .shard {
+    position: absolute; left: 50%; top: 50%;
+    font-family: 'Press Start 2P', monospace;
+    color: #4444ff;
+    text-shadow: 0 0 8px rgba(68,68,255,0.8);
+    opacity: 0;
+  }
+
+  /* === MMI === */
+  .mmi {
+    position: absolute;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 88px;
+    color: #00dd44;
+    text-shadow: 0 0 20px rgba(0,221,68,0.6), 0 0 60px rgba(0,221,68,0.3), 4px 4px 0 #001108;
+    opacity: 0;
+    letter-spacing: 12px;
+  }
+  .mmi.slam {
+    animation: mmiSlam 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  @keyframes mmiSlam {
+    0% { opacity: 0; transform: scale(3) translateY(-40px); filter: brightness(3) blur(6px); }
+    40% { opacity: 1; transform: scale(0.92) translateY(4px); filter: brightness(1.5) blur(0); }
+    60% { transform: scale(1.04) translateY(-2px); }
+    80% { transform: scale(0.99); }
+    100% { opacity: 1; transform: scale(1); filter: brightness(1) blur(0); }
+  }
+  .mmi.idle {
+    opacity: 1;
+    animation: mmiPulse 2s ease-in-out infinite;
+  }
+  @keyframes mmiPulse {
+    0%, 100% { text-shadow: 0 0 20px rgba(0,221,68,0.6), 0 0 60px rgba(0,221,68,0.3), 4px 4px 0 #001108; }
+    50% { text-shadow: 0 0 35px rgba(0,221,68,0.8), 0 0 90px rgba(0,221,68,0.4), 4px 4px 0 #001108; }
+  }
+  .mmi.dissolve {
+    animation: mmiDissolve 0.8s ease-in forwards !important;
+  }
+  @keyframes mmiDissolve {
+    0% { opacity: 1; transform: scale(1); filter: blur(0); letter-spacing: 12px; }
+    40% { opacity: 0.8; transform: scale(1.06); filter: blur(1px); letter-spacing: 18px; color: #00ffaa; }
+    100% { opacity: 0; transform: scale(0.6); filter: blur(12px); letter-spacing: 40px; }
+  }
+
+  /* === EMEMAY === */
+  .ememay {
+    position: absolute;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 76px;
+    letter-spacing: 10px;
+    opacity: 0;
+    background: linear-gradient(135deg, #ff6b00, #ff0066, #aa00ff, #00bbff, #00ff88);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 30px rgba(170,0,255,0.4)) drop-shadow(0 0 60px rgba(255,0,102,0.2));
+  }
+  .ememay.reveal {
+    animation: ememayIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  @keyframes ememayIn {
+    0% { opacity: 0; transform: scale(0.2) rotateY(60deg); filter: brightness(4) blur(15px) drop-shadow(0 0 30px rgba(170,0,255,0.4)); letter-spacing: 40px; }
+    30% { opacity: 1; transform: scale(1.12) rotateY(-8deg); filter: brightness(1.8) blur(0) drop-shadow(0 0 40px rgba(170,0,255,0.6)); }
+    55% { transform: scale(0.96) rotateY(3deg); }
+    75% { transform: scale(1.02) rotateY(-1deg); }
+    100% { opacity: 1; transform: scale(1) rotateY(0); filter: brightness(1) blur(0) drop-shadow(0 0 30px rgba(170,0,255,0.4)) drop-shadow(0 0 60px rgba(255,0,102,0.2)); letter-spacing: 10px; }
+  }
+  .ememay.idle {
+    opacity: 1;
+    animation: ememayFloat 3s ease-in-out infinite, ememayGradient 4s ease-in-out infinite;
+  }
+  @keyframes ememayFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  @keyframes ememayGradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* === FLASH === */
+  .flash {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 50; opacity: 0;
+  }
+  .flash.white { animation: flashPop 0.25s ease-out forwards; background: white; }
+  .flash.green { animation: flashPop 0.3s ease-out forwards; background: #00ff44; }
+  .flash.purple { animation: flashPop 0.4s ease-out forwards; background: #aa00ff; }
+  @keyframes flashPop {
+    0% { opacity: 0.7; }
+    100% { opacity: 0; }
+  }
+
+  /* === RING BURST === */
+  .ring {
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0; height: 0; border-radius: 50%;
+    border: 3px solid transparent;
+    pointer-events: none; opacity: 0;
+  }
+  .ring.burst-green { border-color: rgba(0,221,68,0.7); animation: ringExpand 0.7s ease-out forwards; }
+  .ring.burst-purple { border-color: rgba(170,0,255,0.6); animation: ringExpand 0.9s ease-out forwards; }
+  @keyframes ringExpand {
+    0% { width: 20px; height: 20px; opacity: 0.9; border-width: 4px; }
+    100% { width: 600px; height: 600px; opacity: 0; border-width: 1px; }
+  }
+
+  /* === LOADING BAR === */
+  .loader-wrap {
+    width: 340px;
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+  }
+  .loader-track {
+    width: 100%; height: 8px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 4px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    opacity: 0;
+  }
+  .loader-track.show { animation: fadeUp 0.4s ease-out forwards; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .loader-fill {
+    height: 100%; width: 0%; border-radius: 3px;
+    background: linear-gradient(90deg, #2244ff, #4466ff);
+    box-shadow: 0 0 12px rgba(68,100,255,0.5);
+    transition: width 0.2s steps(6);
+  }
+  .loader-fill.mmi-style {
+    background: linear-gradient(90deg, #00aa33, #00dd55);
+    box-shadow: 0 0 12px rgba(0,221,68,0.5);
+    transition: width 0.15s steps(6);
+  }
+  .loader-fill.ememay-style {
+    background: linear-gradient(90deg, #ff6b00, #ff0066, #aa00ff, #00bbff);
+    background-size: 200% 100%;
+    box-shadow: 0 0 16px rgba(170,0,255,0.4);
+    animation: loaderGrad 1.5s ease-in-out infinite;
+    transition: width 0.15s ease-out;
+  }
+  @keyframes loaderGrad {
+    0%, 100% { background-position: 0% 0; }
+    50% { background-position: 100% 0; }
+  }
+
+  .status {
+    font-family: 'VT323', monospace;
+    font-size: 15px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 2px;
+    height: 18px; opacity: 0;
+  }
+  .status.show { animation: fadeUp 0.3s ease-out forwards; }
+
+  /* === TAGLINE === */
+  .tagline {
+    position: absolute; bottom: -40px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300; font-size: 14px;
+    letter-spacing: 6px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase; opacity: 0;
+  }
+  .tagline.show { animation: tagIn 0.8s ease-out forwards; }
+  @keyframes tagIn {
+    from { opacity: 0; letter-spacing: 12px; }
+    to { opacity: 1; letter-spacing: 6px; }
+  }
+
+  /* === VERSION === */
+  .ver {
+    position: fixed; bottom: 16px; right: 20px;
+    font-family: 'VT323', monospace;
+    font-size: 13px; color: rgba(255,255,255,0.15);
+    z-index: 10; letter-spacing: 1px;
+  }
+
+  .replay {
+    position: fixed; bottom: 16px; left: 20px;
+    font-family: 'VT323', monospace; font-size: 16px;
+    color: rgba(255,255,255,0.2);
+    background: none; border: 1px solid rgba(255,255,255,0.15);
+    padding: 4px 14px; border-radius: 3px;
+    cursor: pointer; z-index: 10; opacity: 0;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .replay:hover { color: rgba(255,255,255,0.6); border-color: rgba(255,255,255,0.4); }
+  .replay.show { animation: fadeUp 0.3s ease-out forwards; }
+</style>
+</head>
+<body>
+
+<div class="scanlines"></div>
+<div class="bg" id="bg"></div>
+<div class="stars" id="stars"></div>
+<div class="flash" id="flash"></div>
+
+<div class="stage">
+  <div class="logo-area" id="logoArea">
+    <div class="ring" id="ring1"></div>
+    <div class="ring" id="ring2"></div>
+    <div class="shatter-container" id="shatter"></div>
+    <div class="hmi" id="hmi">HMI</div>
+    <div class="mmi" id="mmi">MMI</div>
+    <div class="ememay" id="ememay">EMEMAY</div>
+    <div class="tagline" id="tagline">Passenger Information System</div>
+  </div>
+  <div class="loader-wrap">
+    <div class="loader-track" id="track">
+      <div class="loader-fill" id="fill"></div>
+    </div>
+    <div class="status" id="status"></div>
+  </div>
+</div>
+
+<div class="ver">v4.2.0 — build 20260226</div>
+<button class="replay" id="replay" onclick="location.reload()">↻ REPLAY</button>
+
+<script>
+const $ = id => document.getElementById(id);
+const wait = ms => new Promise(r => setTimeout(r, ms));
+
+// Stars
+(function(){
+  const c = $('stars');
+  for(let i = 0; i < 60; i++){
+    const s = document.createElement('div');
+    s.className = 'star';
+    s.style.left = Math.random()*100 + '%';
+    s.style.top = Math.random()*100 + '%';
+    s.style.animationDelay = (Math.random()*3) + 's';
+    s.style.width = s.style.height = (1 + Math.random()*2) + 'px';
+    c.appendChild(s);
+  }
+})();
+
+function flash(type) {
+  $('flash').className = 'flash ' + type;
+  setTimeout(() => $('flash').className = 'flash', 500);
+}
+
+function shatter() {
+  const el = $('shatter');
+  const frags = ['H','M','I','░','▓','█','0','1','#','×','▒','■'];
+  for(let i = 0; i < 18; i++){
+    const d = document.createElement('div');
+    d.className = 'shard';
+    d.textContent = frags[i % frags.length];
+    d.style.fontSize = (12 + Math.random()*22) + 'px';
+    el.appendChild(d);
+    const a = Math.random()*Math.PI*2;
+    const dist = 80 + Math.random()*160;
+    d.animate([
+      { opacity: 1, transform: 'translate(-50%,-50%) scale(1) rotate(0deg)' },
+      { opacity: 0, transform: `translate(${Math.cos(a)*dist}px, ${Math.sin(a)*dist}px) scale(0.3) rotate(${Math.random()*360}deg)` }
+    ], { duration: 500 + Math.random()*300, easing: 'ease-out', fill: 'forwards' });
+  }
+}
+
+function setBar(pct) { $('fill').style.width = pct + '%'; }
+function setStatus(t) { $('status').textContent = t; }
+
+async function run() {
+  await wait(300);
+  $('track').classList.add('show');
+  $('status').classList.add('show');
+
+  // Phase 1 — HMI
+  setStatus('Initializing HMI...');
+  await wait(400);
+  $('hmi').classList.add('spawn');
+  await wait(1000);
+  $('hmi').className = 'hmi idle';
+  setBar(10);
+  setStatus('Loading display drivers...');
+  await wait(600);
+  setBar(20);
+  setStatus('Connecting to CCU...');
+  await wait(500);
+  setBar(30);
+  setStatus('Reading GPS config...');
+  await wait(500);
+  setBar(38);
+  setStatus('HMI subsystem loaded');
+  await wait(700);
+
+  // Phase 2 — HMI dies
+  setBar(42);
+  setStatus('⚠ HMI module deprecated');
+  await wait(500);
+  $('hmi').className = 'hmi glitch';
+  setStatus('☠ FATAL: HMI terminated');
+  await wait(200);
+  flash('white');
+  shatter();
+  await wait(700);
+
+  // Phase 3 — MMI
+  $('bg').classList.add('phase-mmi');
+  $('fill').classList.add('mmi-style');
+  setBar(48);
+  setStatus('>>> MMI OVERRIDE <<<');
+  await wait(300);
+  $('ring1').classList.add('burst-green');
+  $('mmi').classList.add('slam');
+  flash('green');
+  await wait(600);
+  $('mmi').className = 'mmi idle';
+  setBar(55);
+  setStatus('Installing MMI framework...');
+  await wait(500);
+  setBar(63);
+  setStatus('Loading interface engine...');
+  await wait(500);
+  setBar(70);
+  setStatus('MMI subsystem online');
+  await wait(800);
+
+  // Phase 4 — Ememay
+  setBar(78);
+  setStatus('Preparing transformation...');
+  await wait(500);
+  $('mmi').className = 'mmi dissolve';
+  $('bg').classList.remove('phase-mmi');
+  $('bg').classList.add('phase-ememay');
+  await wait(900);
+
+  $('fill').classList.remove('mmi-style');
+  $('fill').classList.add('ememay-style');
+  $('ring2').classList.add('burst-purple');
+  $('ememay').classList.add('reveal');
+  flash('purple');
+  setBar(85);
+  setStatus('✦ Ememay engine loading...');
+  await wait(600);
+  $('ememay').className = 'ememay idle';
+  $('tagline').classList.add('show');
+  setBar(92);
+  setStatus('✦ Initializing next-gen UI...');
+  await wait(500);
+  setBar(100);
+  setStatus('✦ System ready');
+  await wait(600);
+  $('status').style.transition = 'opacity 1s';
+  $('status').style.opacity = '0';
+  $('replay').classList.add('show');
+}
+
+run();
+</script>
+</body>
+</html>
